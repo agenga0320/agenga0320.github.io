@@ -113,9 +113,8 @@
   .rows dd { margin:0; }
 
   /* footer */
-  footer { position:relative; height:100svh; min-height:560px; overflow:hidden; margin-top:var(--m); }
-  footer > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:80% 45%; filter:brightness(.5); }
-  .ft { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between; padding:32px var(--pad) 40px; }
+  footer { margin:var(--m) var(--m) 0; background:var(--surface); }
+  .ft { display:flex; flex-direction:column; justify-content:space-between; gap:clamp(96px, 16vw, 240px); padding:32px var(--pad) 40px; }
   .ft-top { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
   .ft-top a { margin-right:20px; }
   .big { font-family:var(--display); font-weight:900; font-size:clamp(5rem, 18vw, 18rem); line-height:1; letter-spacing:-0.03em; margin:0 0 24px; }
@@ -136,7 +135,6 @@
     .names li { padding:20px 0; }
     .rows { grid-template-columns:1fr; gap:2px; }
     .rows dd { margin-bottom:16px; }
-    footer { height:88svh; }
   }
   @media (prefers-reduced-motion:reduce) {
     html { scroll-behavior:auto; }
@@ -281,7 +279,7 @@
         <p class="desc">為一家日本企業重建官網而自製的主題。從 EPS 原始檔自行轉出 SVG 商標，以設計 token 管理配色並實測 WCAG 對比度，支援日・英・簡中三語與 OGP 自動產生。PHP・CSS・Python。</p></li>
       <li class="rv"><button type="button"><span class="nm">台灣行政區衛星片</span><span class="meta">影片・2026</span></button>
         <img src="img/tp.jpg" alt="台北盆地的衛星影像" width="2800" height="1680" loading="lazy">
-        <p class="desc">用衛星影像與 3D 運鏡介紹台灣行政區，全部以程式生成的影片；頁尾的地球影像也是片中用的素材。Remotion・WebGL・FFmpeg。</p></li>
+        <p class="desc">用衛星影像與 3D 運鏡介紹台灣行政區，全部以程式生成的影片。Remotion・WebGL・FFmpeg。</p></li>
       <li class="rv"><button type="button"><span class="nm">日本麻將點數計算機</span><span class="meta">Android・2026</span></button>
         <p class="desc">輸入手牌即可算出符數、翻數與點數，以 GitHub Releases 發布 APK。Kotlin・Gradle。</p></li>
       <li class="rv"><button type="button"><span class="nm">myHistoryViewer</span><span class="meta">Web・2026</span></button>
@@ -328,7 +326,6 @@
 </div>
 
 <footer>
-  <img src="img/world.jpg" alt="從太空看的地球全圖衛星影像" width="4096" height="2048" loading="lazy">
   <div class="ft">
     <div class="ft-top">
       <nav aria-label="頁尾導覽"><a href="#career">經歷</a><a href="#work">專案</a><a href="#contact">聯絡</a></nav>
@@ -336,8 +333,7 @@
     </div>
     <div>
       <p class="big">陳鉅仁</p>
-      <!-- taste-skill-ignore: "Next Generation" is the dataset's proper name -->
-      <p class="credit">衛星影像：NASA Blue Marble: Next Generation（NASA GIBS，公有領域）；Sentinel-2 cloudless 2016 by EOX IT Services GmbH（CC BY 4.0，含經修改的 Copernicus Sentinel 2016 資料）。最後更新：2026 年 11 月。</p>
+      <p class="credit">衛星影像：Sentinel-2 cloudless 2016 by EOX IT Services GmbH（CC BY 4.0，含經修改的 Copernicus Sentinel 2016 資料）。最後更新：2026 年 11 月。</p>
     </div>
   </div>
 </footer>
