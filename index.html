@@ -33,6 +33,7 @@
   .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; }
   .card h3 { margin:0 0 6px; font-size:1.05rem; }
   .card p { margin:0 0 12px; color:var(--muted); font-size:.95rem; }
+  .card a { color:var(--accent); font-size:.9rem; }
   .tags span { display:inline-block; font-size:.78rem; padding:2px 8px; margin:0 6px 6px 0; border-radius:999px; border:1px solid var(--line); }
   .tags.strong span { border-color:var(--accent); }
   h4 { margin:20px 0 8px; font-size:.9rem; color:var(--muted); font-weight:normal; }
@@ -59,6 +60,7 @@
     <li><strong>中日雙語</strong>：JLPT N1，曾擔任日籍設計者與中國籍開發者之間的會議口譯與協調</li>
   </ul>
   <p class="links">
+    <a href="mailto:agenga.chaos@gmail.com">agenga.chaos@gmail.com</a>
     <a href="https://github.com/agenga0320">GitHub</a>
   </p>
 
@@ -203,14 +205,25 @@
   <h2>個人與其他專案</h2>
   <div class="grid">
     <div class="card">
+      <h3>AI 數獨教練</h3>
+      <p>卡關時由 AI 分三層引導下一步該怎麼想，而不是直接給答案；AI 的推理會先用正確解答核對，錯了就不顯示。支援 Claude、ChatGPT、Gemini 等 6 家 API，以及照片匯入題目、筆記、鎖定數字模式，並可從 GitHub Releases 自動更新。不使用第三方套件。</p>
+      <div class="tags"><span>Android</span><span>Kotlin</span><span>LLM API</span></div>
+      <a href="https://github.com/agenga0320/sudoku">GitHub</a>
+    </div>
+    <div class="card">
+      <h3>MangaReader</h3>
+      <p>Android 漫畫閱讀 App。解析網站頁面取得作品與章節，提供三種閱讀模式、縮放手勢、追蹤作品更新（前景服務在背景也能持續檢查）。資料全部存在手機本機，以 Product Flavors 管理多個版本，並寫了一鍵建置・驗證簽章・發布的腳本。</p>
+      <div class="tags"><span>Android</span><span>Java</span><span>jsoup</span><span>Gradle</span></div>
+    </div>
+    <div class="card">
+      <h3>企業官網 WordPress 主題</h3>
+      <p>為日本企業重建官網而自製的 WordPress 主題。從 EPS 原始檔自行轉出 SVG 商標，以設計 token 管理配色並實測 WCAG 對比度，支援日・英・簡中三語、OGP／meta 自動產生。</p>
+      <div class="tags"><span>WordPress</span><span>PHP</span><span>CSS</span><span>Python</span></div>
+    </div>
+    <div class="card">
       <h3>日本麻將點數計算機</h3>
       <p>輸入手牌即可計算符數、翻數與點數的 Android App，以 GitHub Releases 發布 APK。</p>
       <div class="tags"><span>Android</span><span>Kotlin</span><span>Gradle</span></div>
-    </div>
-    <div class="card">
-      <h3>AI 數獨教練</h3>
-      <p>不只給答案，而是一步一步提示解題技巧的數獨 App。</p>
-      <div class="tags"><span>Android</span><span>AI</span></div>
     </div>
     <div class="card">
       <h3>Muse Feed</h3>
