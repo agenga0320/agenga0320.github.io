@@ -65,6 +65,7 @@
   .readout { min-height:1.6em; color:var(--muted); font-size:var(--step-small); margin-bottom:48px; }
   .group { margin-top:56px; }
   .group-name { font-size:var(--step-lead); font-weight:600; margin-bottom:8px; }
+  .group-name span { display:block; font-size:var(--step-small); font-weight:400; color:var(--muted); font-variant-numeric:tabular-nums; }
   .job { padding:18px 0; transition:opacity .3s; }
   .job-head { display:flex; justify-content:space-between; align-items:baseline; gap:24px; }
   .job h3 { font-family:var(--text); font-weight:600; font-size:var(--step-body); letter-spacing:0; line-height:1.4; }
@@ -117,11 +118,8 @@
 
   /* footer */
   footer { margin:var(--m) var(--m) 0; background:var(--surface); }
-  .ft { display:flex; flex-direction:column; justify-content:space-between; gap:clamp(96px, 16vw, 240px); padding:32px var(--pad) 40px; }
-  .ft-top { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
-  .ft-top a { margin-right:20px; }
-  .big { font-family:var(--display); font-weight:900; font-size:clamp(5rem, 18vw, 18rem); line-height:1; letter-spacing:-0.03em; margin:0 0 24px; }
-  .credit { font-size:var(--step-small); max-width:60ch; }
+  .ft { display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; padding:28px var(--pad); font-size:var(--step-small); color:var(--muted); }
+  .ft a { color:var(--muted); }
 
   /* entrances */
   .js .rv { opacity:0; translate:0 24px; transition:opacity .7s var(--ease), translate .7s var(--ease); transition-delay:calc(var(--i, 0) * 80ms); }
@@ -194,7 +192,7 @@
       <p class="readout" aria-live="polite"></p>
 
       <div class="group">
-        <p class="group-name">MCT Japan｜2026.05 – 現在</p>
+        <p class="group-name">MCT Japan<span>2026.05 – 現在</span></p>
         <article class="job rv" data-tech="mcp azure typescript">
           <div class="job-head"><h3>AI 業務助理（企業示範）</h3><span class="when">2026.10 – 現在</span></div>
           <p>為多家日本製造業、汽車業客戶製作的 AI 業務助理示範，涵蓋接單、規格書管理等流程。</p>
@@ -216,7 +214,7 @@
       </div>
 
       <div class="group">
-        <p class="group-name">スリーティソフト｜2022.12 – 2026.04</p>
+        <p class="group-name">スリーティソフト<span>2022.12 – 2026.04</span></p>
         <article class="job rv" data-tech="java spring react oracle linux">
           <div class="job-head"><h3>船舶管理系統重建</h3><span class="when">2025.09 – 2026.04</span></div>
           <p>將既有的 C# 系統以 Java・React 重新開發。團隊 15 人，負責工程：詳細設計～整合測試。</p>
@@ -244,7 +242,7 @@
       </div>
 
       <div class="group">
-        <p class="group-name">玉山銀行 資訊處｜2021.01 – 2021.06</p>
+        <p class="group-name">玉山銀行 資訊處<span>2021.01 – 2021.06</span></p>
         <article class="job rv" data-tech="java oracle">
           <div class="job-head"><h3>軟體工程師，海外資訊部</h3><span class="when">2021.01 – 2021.06</span></div>
           <p>負責海外分行的業務需求。新人訓練後主要負責香港分行開戶系統上線，以及開戶、存款、匯款功能的維護與追加開發。團隊 30 人，負責工程：詳細設計～單元測試。</p>
@@ -268,7 +266,7 @@
   </section>
 
   <section id="work" aria-labelledby="work-h">
-    <h2 id="work-h" class="rv">下班後做的東西</h2>
+    <h2 id="work-h" class="rv">個人與共同開發專案</h2>
     <ul class="names">
       <li class="on rv"><button type="button"><span class="nm">HAVALON</span><span class="meta">共同開發・2026</span></button>
         <img src="img/havalon.png" alt="HAVALON 的首頁畫面：貓咪騎士圍著王座的插圖與建立房間的表單" width="860" height="1800" loading="lazy">
@@ -338,14 +336,8 @@
 
 <footer>
   <div class="ft">
-    <div class="ft-top">
-      <nav aria-label="頁尾導覽"><a href="#career">經歷</a><a href="#work">專案</a><a href="#contact">聯絡</a></nav>
-      <a href="mailto:agenga.chaos@gmail.com">agenga.chaos@gmail.com</a>
-    </div>
-    <div>
-      <p class="big">陳鉅仁</p>
-      <p class="credit">最後更新：2026 年 11 月。</p>
-    </div>
+    <p>© 2026 陳鉅仁・最後更新 2026 年 11 月</p>
+    <a href="#">回到頂端</a>
   </div>
 </footer>
 
