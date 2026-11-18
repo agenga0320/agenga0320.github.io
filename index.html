@@ -5,391 +5,305 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>陳鉅仁｜軟體工程師 履歷</title>
 <meta name="description" content="陳鉅仁｜在日本工作的台灣軟體工程師。Java 企業系統、Next.js／FastAPI 全端開發、MCP 與 AI 輔助開發。中文母語，日文 JLPT N1，英文 TOEIC 825。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&family=Noto+Sans+TC:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:#0c0a08; --surface:#181512; --surface-2:#221e1a; --ink:#ffffff; --muted:#a39d96;
-    --accent:#c9a45a; --accent-ink:#0c0a08;
-    --display:"Noto Serif TC", serif;
-    --text:"Noto Sans TC", system-ui, sans-serif;
-    --step-small:clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
-    --step-body:clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
-    --step-lead:clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-    --step-head:clamp(2rem, 1.3rem + 2.4vw, 2.75rem);
-    --step-display:clamp(3.25rem, 1.5rem + 6vw, 7rem);
-    --m:12px; --pad:clamp(24px, 4.5vw, 72px);
-    --ease:cubic-bezier(.2,.7,.2,1);
+  :root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4; --accent:#0f766e; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1c1917; --fg:#f5f5f4; --muted:#a8a29e; --card:#292524; --line:#44403c; --accent:#5eead4; }
   }
   * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:400 var(--step-body)/1.6 var(--text); }
-  a { color:var(--ink); text-underline-offset:.2em; text-decoration-thickness:2px; }
-  a:hover { color:var(--accent); }
-  :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
-  ::selection { background:var(--accent); color:var(--accent-ink); }
-  h1, h2, h3 { margin:0; font-family:var(--display); font-weight:900; letter-spacing:-0.02em; line-height:1.05; }
-  p { margin:0; }
-
-  .page { padding:var(--m) var(--m) 0; }
-
-  /* hero */
-  .hero { min-height:calc(100svh - 2 * var(--m)); background:var(--surface); display:grid; grid-template-rows:auto 1fr; padding:20px var(--pad) 0; text-align:center; }
-  .top { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:16px; font-size:var(--step-small); }
-  .top a { text-decoration:none; }
-  .top a:first-child { justify-self:start; } .top a:last-child { justify-self:end; }
-  .mark { font-family:var(--display); font-weight:900; font-size:var(--step-lead); letter-spacing:-0.02em; }
-  .hero-body { align-self:start; margin-top:22svh; display:grid; justify-items:center; gap:28px; padding-bottom:22svh; }
-  .hero h1 { font-size:var(--step-display); line-height:1; }
-  .hero h1 span { display:block; font-size:var(--step-head); margin-top:.25em; }
-  .hero p { max-width:28em; text-wrap:balance; }
-  .btn { display:inline-block; background:var(--accent); color:var(--accent-ink); font-weight:600; text-decoration:none; padding:16px 28px; transition:transform .2s var(--ease), background .2s; }
-  .btn:hover { color:var(--accent-ink); background:#d9b871; transform:translateY(-2px); }
-  .btn:active { transform:translateY(0) scale(.98); }
-
-  section { padding:clamp(120px, 14vw, 200px) var(--pad) 0; max-width:960px; margin:0 auto; }
-  .col { max-width:46ch; }
-  h2 { font-size:var(--step-head); margin-bottom:40px; }
-
-  /* intro */
-  .intro { margin-left:6%; display:grid; gap:1.4em; }
-  .intro p:first-child { font-weight:600; font-size:var(--step-lead); line-height:1.45; }
-
-  /* career list */
-  .filter { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px; }
-  .filter button { font:inherit; font-size:var(--step-small); color:var(--ink); background:var(--surface-2); border:0; padding:10px 14px; cursor:pointer; transition:background .2s, color .2s, transform .15s var(--ease); }
-  .filter button:hover { background:#2e2924; }
-  .filter button:active { transform:scale(.96); }
-  .filter button[aria-pressed="true"] { background:var(--accent); color:var(--accent-ink); }
-  .readout { min-height:1.6em; color:var(--muted); font-size:var(--step-small); margin-bottom:48px; }
-  .group { margin-top:56px; }
-  .group-name { font-size:var(--step-lead); font-weight:600; margin-bottom:8px; }
-  .group-name span { display:block; font-size:var(--step-small); font-weight:400; color:var(--muted); font-variant-numeric:tabular-nums; }
-  .job { padding:18px 0; transition:opacity .3s; }
-  .job-head { display:flex; justify-content:space-between; align-items:baseline; gap:24px; }
-  .job h3 { font-family:var(--text); font-weight:600; font-size:var(--step-body); letter-spacing:0; line-height:1.4; }
-  .when { color:var(--muted); font-size:var(--step-small); font-variant-numeric:tabular-nums; white-space:nowrap; }
-  .job p, .job ul { margin-top:6px; }
-  .job ul { padding-left:1.1em; }
-  .job .stack { color:var(--muted); font-size:var(--step-small); }
-  .job.dim h3, .job.dim p, .job.dim li { color:var(--muted); }
-  .hit { color:var(--accent); font-size:var(--step-small); font-weight:600; white-space:nowrap; }
-  .job li::marker { color:var(--accent); }
-
-  /* work index */
-  .names { list-style:none; margin:0; padding:0; }
-  .names li { padding:14px 0; }
-  .names button { font:inherit; color:var(--muted); background:none; border:0; padding:0; text-align:left; cursor:pointer; display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; width:100%; }
-  .names .nm { font-family:var(--display); font-weight:900; font-size:var(--step-head); letter-spacing:-0.02em; line-height:1.1; transition:color .25s; }
-  .names .meta { font-size:var(--step-small); }
-  .names li.on .nm, .names button:hover .nm, .names button:focus-visible .nm { color:var(--ink); }
-  .names .desc { display:none; margin-top:10px; max-width:46ch; color:var(--ink); }
-  .names li.on .desc { display:block; }
-  .names .desc a { color:var(--accent); }
-  .vids { margin:12px 0 0; padding-left:1.1em; display:grid; gap:8px; }
-  .names .vids li { padding:0; }
-  .vids li::marker { color:var(--accent); }
-  .names img { display:none; width:100%; max-width:640px; height:auto; aspect-ratio:16/10; object-fit:cover; object-position:50% 0; margin-top:16px; }
-  .names li.on img { display:block; }
-
-  /* letter */
-  .letter { display:grid; gap:1.2em; margin:0 auto; max-width:30em; }
-  .letter .sign { font-family:var(--display); font-weight:900; font-size:var(--step-lead); margin-top:.6em; }
-  .letter .role { color:var(--muted); font-size:var(--step-small); }
-  .facts { display:grid; grid-template-columns:auto 1fr; gap:6px 20px; margin-top:.6em; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.7 system-ui, "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
+  main { max-width:820px; margin:0 auto; padding:64px 16px; }
+  h1 { font-size:2.2rem; margin:0 0 4px; }
+  .role { color:var(--muted); margin:0 0 20px; }
+  .links a { color:var(--accent); margin-right:16px; text-decoration:none; }
+  .links a:hover { text-decoration:underline; }
+  h2 { font-size:1.2rem; margin:56px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .facts { display:grid; gap:8px 24px; grid-template-columns:max-content 1fr; margin:0; }
   .facts dt { color:var(--muted); }
   .facts dd { margin:0; }
-
-  /* contact */
-  .contact { padding-bottom:clamp(120px, 12vw, 160px); }
-  .prompt { font-size:var(--step-lead); font-weight:600; line-height:1.4; }
-  .prompt span { display:block; color:var(--muted); }
-  form { position:relative; max-width:520px; margin-top:28px; }
-  form input { width:100%; height:64px; border:0; background:#f4efe8; color:#0c0a08; font:inherit; padding:0 72px 0 20px; }
-  form input::placeholder { color:#5e5850; opacity:1; }
-  form input:focus { outline:2px solid var(--accent); outline-offset:-2px; }
-  form button { position:absolute; right:10px; top:10px; width:44px; height:44px; border:0; border-radius:50%; background:var(--accent); color:var(--accent-ink); font-size:20px; cursor:pointer; transition:transform .2s var(--ease); }
-  form button:hover { transform:translateX(3px); }
-  .hint { margin-top:16px; font-size:var(--step-small); color:var(--muted); }
-  .rows { margin-top:56px; display:grid; grid-template-columns:auto 1fr; gap:10px 24px; }
-  .rows dt { color:var(--muted); }
-  .rows dd { margin:0; }
-
-  /* footer */
-  footer { margin:var(--m) var(--m) 0; background:var(--surface); }
-  .ft { display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; padding:28px var(--pad); font-size:var(--step-small); color:var(--muted); }
-  .ft a { color:var(--muted); }
-
-  /* entrances */
-  .js .rv { opacity:0; translate:0 24px; transition:opacity .7s var(--ease), translate .7s var(--ease); transition-delay:calc(var(--i, 0) * 80ms); }
-  .js .rv.in { opacity:1; translate:0 0; }
-
-  @media (max-width:860px) {
-    .hero { min-height:auto; }
-    .hero-body { margin-top:28px; gap:20px; padding-bottom:64px; }
-    .intro { margin-left:0; max-width:78%; }
-    .job-head { flex-direction:column; gap:2px; }
-    .names .desc { display:block; }
-    .names .nm { color:var(--ink); }
-    .names img { display:block; width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; object-position:50% 0; margin-bottom:12px; }
-    .names li { padding:20px 0; }
-    .rows { grid-template-columns:1fr; gap:2px; }
-    .rows dd { margin-bottom:16px; }
-  }
-  @media (prefers-reduced-motion:reduce) {
-    html { scroll-behavior:auto; }
-    .js .rv { opacity:1; translate:none; transition:none; }
+  .employer { font-size:1.05rem; margin:32px 0 0; }
+  .employer span { color:var(--muted); font-weight:normal; font-size:.9rem; margin-left:8px; }
+  .job { display:grid; grid-template-columns:120px 1fr; gap:16px; padding:20px 0; border-bottom:1px solid var(--line); }
+  .job:last-of-type { border-bottom:0; }
+  .period { color:var(--muted); font-size:.9rem; font-variant-numeric:tabular-nums; }
+  .job h3 { margin:0 0 4px; font-size:1.05rem; }
+  .job .summary { margin:0 0 8px; color:var(--muted); }
+  .job .meta { margin:0 0 8px; font-size:.85rem; color:var(--muted); }
+  .job ul { margin:0 0 10px; padding-left:1.2em; }
+  .job li { font-size:.95rem; }
+  @media (max-width:560px) { .job { grid-template-columns:1fr; gap:4px; } }
+  .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; overflow:hidden; }
+  .card img { display:block; width:calc(100% + 40px); margin:-20px -20px 16px; aspect-ratio:16/10; height:auto; object-fit:cover; object-position:50% 0; }
+  .card h3 { margin:0 0 6px; font-size:1.05rem; }
+  .card p { margin:0 0 12px; color:var(--muted); font-size:.95rem; }
+  .card a { color:var(--accent); font-size:.9rem; }
+  .card ul { margin:0 0 12px; padding-left:1.2em; font-size:.9rem; }
+  .card li { margin-bottom:4px; }
+  .tags span { display:inline-block; font-size:.78rem; padding:2px 8px; margin:0 6px 6px 0; border-radius:999px; border:1px solid var(--line); }
+  .tags.strong span { border-color:var(--accent); }
+  h4 { margin:20px 0 8px; font-size:.9rem; color:var(--muted); font-weight:normal; }
+  .highlights { margin:20px 0; padding-left:1.2em; }
+  footer { margin-top:64px; color:var(--muted); font-size:.85rem; }
+  @media print {
+    :root { --bg:#fff; --fg:#000; --muted:#444; --card:#fff; --line:#ccc; --accent:#000; }
+    main { padding:0; max-width:none; }
+    h2 { margin-top:28px; }
+    .job, .card { break-inside:avoid; }
   }
 </style>
-<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<div class="page">
-<div class="read">
+<main>
+  <h1>陳鉅仁</h1>
+  <p class="role">軟體工程師｜Java・Web・AI 輔助開發</p>
+  <p>系統開發經驗約 4 年半（台灣 2021 年起、日本 2022 年 12 月起），參與過銀行、公部門、船舶管理、農業補助等領域的企業系統。能從設計一路負責到測試與部署，也能以中日文在團隊間溝通協調。</p>
+  <ul class="highlights">
+    <li><strong>Java 企業系統</strong>：Spring／Hibernate／Oracle・PostgreSQL 的新開發、重建、維護與基礎架構更新</li>
+    <li><strong>全端開發</strong>：以 Next.js／React + FastAPI + PostgreSQL 從資料庫設計到 Docker 部署一手完成</li>
+    <li><strong>AI 輔助開發</strong>：在實際專案中運用 Claude Code／Codex，並開發 AI 業務助理與 MCP 整合</li>
+    <li><strong>中日英三語</strong>：JLPT N1、TOEIC 825，曾擔任日籍設計者與中國籍開發者之間的會議口譯與協調</li>
+  </ul>
+  <p class="links">
+    <a href="mailto:agenga.chaos@gmail.com">agenga.chaos@gmail.com</a>
+    <a href="https://github.com/agenga0320">GitHub</a>
+  </p>
 
-  <header class="hero">
-    <nav class="top" aria-label="頁面導覽">
-      <a href="#career">經歷</a>
-      <span class="mark">陳鉅仁</span>
-      <a href="#work">專案</a>
-    </nav>
-    <div class="hero-body">
-      <h1>陳鉅仁<span>在日本做系統開發</span></h1>
-      <p>Java 企業系統、全端與 AI 輔助開發。中文母語，日文 N1，英文 TOEIC 825。</p>
-      <a class="btn" href="mailto:agenga.chaos@gmail.com">寫信給我</a>
+  <h2>學歷與證照</h2>
+  <dl class="facts">
+    <dt>學歷</dt><dd>國立中央大學 資訊工程學系（2020.06 畢業）</dd>
+    <dt>證照</dt><dd>基本資訊技術者（2025）</dd>
+    <dt></dt><dd>日本語能力試驗 JLPT N1（2023）</dd>
+    <dt></dt><dd>TOEIC 825 分（2020.04）</dd>
+  </dl>
+
+  <h2>工作經歷</h2>
+
+  <h3 class="employer">MCT Japan<span>2026.05 – 現在</span></h3>
+
+  <div class="job">
+    <div class="period">2026.10 – 現在</div>
+    <div>
+      <h3>AI 業務助理（企業示範）</h3>
+      <p class="summary">為多家日本製造業、汽車業客戶製作的 AI 業務助理示範，涵蓋接單、規格書管理等流程。</p>
+      <ul>
+        <li>依各客戶的業務流程設計並調整畫面</li>
+        <li>以共通的基礎版本快速衍生出各客戶專用的示範</li>
+        <li>部署至 Azure 供客戶實際操作</li>
+      </ul>
+      <div class="tags"><span>Web</span><span>Azure</span><span>AI</span></div>
     </div>
-  </header>
-
-  <section aria-label="簡介">
-    <div class="intro col">
-      <p class="rv">系統開發約 4 年半：2021 年在台灣的銀行起步，2022 年 12 月起在日本。</p>
-      <p class="rv" style="--i:1">Java 企業系統是我的主場。Spring、Hibernate、Oracle 和 PostgreSQL，新開發、重建、維護和 WebLogic 基礎架構更新都做過。</p>
-      <p class="rv" style="--i:2">現在做全端：用 Next.js／React 加 FastAPI，從資料表設計一路做到 Docker 部署。</p>
-      <p class="rv" style="--i:3">也把 AI 放進實際工作：讓 AI 助理透過 MCP 操作既有的簽核系統，開發時用 Claude Code 和 Codex。</p>
-      <p class="rv" style="--i:4">在日本的團隊裡，我也擔任日籍設計者與中國籍開發者之間的口譯。<a href="#career">看完整經歷</a></p>
-    </div>
-  </section>
-
-  <section id="career" aria-labelledby="career-h">
-    <div class="col">
-      <h2 id="career-h" class="rv">工作經歷</h2>
-      <p class="rv" style="margin-bottom:16px">選一項技術，看它用在哪幾段經歷。</p>
-      <div class="filter rv" role="group" aria-label="依技術篩選">
-        <button type="button" data-t="java" aria-pressed="false">Java</button>
-        <button type="button" data-t="spring" aria-pressed="false">Spring</button>
-        <button type="button" data-t="oracle" aria-pressed="false">Oracle</button>
-        <button type="button" data-t="postgresql" aria-pressed="false">PostgreSQL</button>
-        <button type="button" data-t="python" aria-pressed="false">Python</button>
-        <button type="button" data-t="fastapi" aria-pressed="false">FastAPI</button>
-        <button type="button" data-t="typescript" aria-pressed="false">TypeScript</button>
-        <button type="button" data-t="react" aria-pressed="false">React</button>
-        <button type="button" data-t="csharp" aria-pressed="false">C# ／ VB.NET</button>
-        <button type="button" data-t="mcp" aria-pressed="false">MCP ／ AI</button>
-        <button type="button" data-t="azure" aria-pressed="false">Azure</button>
-        <button type="button" data-t="linux" aria-pressed="false">Linux</button>
-      </div>
-      <p class="readout" aria-live="polite"></p>
-
-      <div class="group">
-        <p class="group-name">MCT Japan<span>2026.05 – 現在</span></p>
-        <article class="job rv" data-tech="mcp azure typescript">
-          <div class="job-head"><h3>AI 業務助理（企業示範）</h3><span class="when">2026.10 – 現在</span></div>
-          <p>為多家日本製造業、汽車業客戶製作的 AI 業務助理示範，涵蓋接單、規格書管理等流程。</p>
-          <ul><li>依各客戶的業務流程設計並調整畫面</li><li>以共通的基礎版本快速衍生各客戶專用的示範</li><li>部署至 Azure 供客戶實際操作</li></ul>
-          <p class="stack">Web・Azure・AI</p>
-        </article>
-        <article class="job rv" data-tech="python fastapi typescript react postgresql linux mcp">
-          <div class="job-head"><h3>就農補助資金管理系統開發</h3><span class="when">2026.05 – 現在</span></div>
-          <p>集中管理農業法人與就農者從登錄、申請、審查到補助款請領的 Web 系統。負責工程：基本設計～整合測試。</p>
-          <ul><li>畫面、API、資料庫設計與設計文件</li><li>Next.js／React 畫面與輸入檢核，FastAPI 的 API 與業務邏輯</li><li>申請、審查、退回／重新提交流程與角色權限控制</li><li>PDF 報表、附件管理、郵件通知</li><li>PostgreSQL 資料表設計，以 Alembic 管理變更</li><li>測試、除錯，以 Docker 建置與部署</li><li>以 Claude Code／Codex 進行 AI 輔助開發</li></ul>
-          <p class="stack">Python・FastAPI・SQLAlchemy・TypeScript・Next.js・React・PostgreSQL・Alembic・Docker・pytest</p>
-        </article>
-        <article class="job rv" data-tech="python fastapi mcp csharp azure">
-          <div class="job-head"><h3>簽核系統 MCP 伺服器與 API 開發</h3><span class="when">2026.05 – 2026.08</span></div>
-          <p>讓 AI 助理透過 MCP 查詢、起草、送出與審核日本企業簽核 SaaS 上的申請。在既有的 VB.NET WebForms 系統之外另建 ASP.NET Core API，由 Python MCP 伺服器呼叫。</p>
-          <ul><li>SSO 登入，含 SSO 成功但簽核系統登入失敗等例外處理</li><li>附件上傳、下載、刪除，加上權限與副檔名限制</li><li>MCP 伺服器登入畫面、上傳畫面的改善與流程修正</li><li>Azure 部署調整</li></ul>
-          <p class="stack">Python・FastAPI・MCP・ASP.NET Core・C#・VB.NET・Azure</p>
-        </article>
-      </div>
-
-      <div class="group">
-        <p class="group-name">スリーティソフト<span>2022.12 – 2026.04</span></p>
-        <article class="job rv" data-tech="java spring react oracle linux">
-          <div class="job-head"><h3>船舶管理系統重建</h3><span class="when">2025.09 – 2026.04</span></div>
-          <p>將既有的 C# 系統以 Java・React 重新開發。團隊 15 人，負責工程：詳細設計～整合測試。</p>
-          <ul><li>後端／前端開發與單元測試</li><li>新開發各類申請共用的郵件寄送功能</li><li>弱點掃描與檢出問題的修正</li><li>日籍設計者與中國籍開發者之間的會議口譯與協調</li><li>每日例行發布的備份作業</li></ul>
-          <p class="stack">Java・Spring・React・Oracle</p>
-        </article>
-        <article class="job rv" data-tech="java oracle linux">
-          <div class="job-head"><h3>系統基礎架構更新</h3><span class="when">2024.12 – 2025.08</span></div>
-          <p>因授權到期進行的基礎架構更新與架構調整。團隊 15 人，負責工程：基本設計～單元測試。</p>
-          <ul><li>調查 WebLogic・Java 升級的不相容問題並撰寫報告</li><li>考量成本的伺服器規格設計</li><li>建置 WebLogic 與網域，並進行建置後測試</li><li>於每週例會報告進度與共享課題</li></ul>
-          <p class="stack">Java・WebLogic・Oracle・Linux</p>
-        </article>
-        <article class="job rv" data-tech="java postgresql linux">
-          <div class="job-head"><h3>公務員資訊管理系統維護</h3><span class="when">2024.08 – 2024.11</span></div>
-          <p>資訊管理系統的維護與基礎架構升級。團隊 15 人，負責工程：開發～單元測試、維運。</p>
-          <ul><li>瀏覽器／OS 升級相關測試與測試報告</li><li>依客戶需求開發 Shell 腳本、修改程式</li><li>處理客戶緊急需求與日常維護</li><li>每日／每週系統使用狀況報告</li></ul>
-          <p class="stack">Java・TERASOLUNA・JSP・Hibernate・PostgreSQL・Shell</p>
-        </article>
-        <article class="job rv" data-tech="java spring postgresql">
-          <div class="job-head"><h3>網路管理系統新版本開發</h3><span class="when">2022.12 – 2024.07</span></div>
-          <p>既有系統的新版本開發。團隊 15 人，負責工程：詳細設計～整合測試。</p>
-          <ul><li>詳細設計與詳細設計書撰寫</li><li>新增畫面、API、批次程式</li><li>系統測試與測試報告</li><li>處理客戶的調查需求</li></ul>
-          <p class="stack">Java・Spring・JSF・Hibernate・PostgreSQL</p>
-        </article>
-      </div>
-
-      <div class="group">
-        <p class="group-name">玉山銀行 資訊處<span>2021.01 – 2021.06</span></p>
-        <article class="job rv" data-tech="java oracle">
-          <div class="job-head"><h3>軟體工程師，海外資訊部</h3><span class="when">2021.01 – 2021.06</span></div>
-          <p>負責海外分行的業務需求。新人訓練後主要負責香港分行開戶系統上線，以及開戶、存款、匯款功能的維護與追加開發。團隊 30 人，負責工程：詳細設計～單元測試。</p>
-          <ul><li>香港分行開戶系統上線</li><li>程式、批次與報表開發，以及追加開發的測試</li><li>驗收外包廠商的成果、確認作業進度</li><li>每日新版程式部署</li></ul>
-          <p class="stack">Java・Hibernate・SQL Server・Oracle</p>
-        </article>
-      </div>
-
-      <div class="group">
-        <p class="group-name">學生時期</p>
-        <article class="job rv" data-tech="">
-          <div class="job-head"><h3>均一教育平台，軟體 QA 實習生</h3><span class="when">2019.06 – 2020.01</span></div>
-          <p>以網頁除錯為主，因此熟悉網頁架構；也在大量協作中學到業界的溝通方式、開發流程，以及對工程師的要求。</p>
-        </article>
-        <article class="job rv" data-tech="">
-          <div class="job-head"><h3>設計思考通識課程，助教</h3><span class="when">2019.09 – 2020.01</span></div>
-          <p>課程目標是讓學生組隊做出一套桌遊。我負責引導討論方向並適時提出建議，8 組學生都完成了自己的桌遊。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="work" aria-labelledby="work-h">
-    <h2 id="work-h" class="rv">個人與共同開發專案</h2>
-    <ul class="names">
-      <li class="on rv"><button type="button"><span class="nm">HAVALON</span><span class="meta">共同開發・2026</span></button>
-        <img src="img/havalon.png" alt="HAVALON 的首頁畫面：貓咪騎士圍著王座的插圖與建立房間的表單" width="860" height="1800" loading="lazy">
-        <p class="desc">手機多人連線的阿瓦隆桌遊，含擴充角色、語音通話、逐字稿與 AI 復盤。我做了圓桌與隊長輪替畫面、投票與任務卡對話框、手機休眠後語音自動重連、麥克風被拒時的降級處理，以及請求逾時與過期資料清除。Next.js・TypeScript・Drizzle ORM・Cloudflare Workers。<a href="https://havalon.vercel.app">線上遊玩</a></p></li>
-      <li class="rv"><button type="button"><span class="nm">AI 數獨教練</span><span class="meta">Android・2026</span></button>
-        <p class="desc">卡關時 AI 分三層引導下一步該怎麼想，不直接給答案；AI 的推理先用正確解答核對，錯了就不顯示。支援 6 家 AI 的 API、照片匯入題目、筆記與鎖定數字模式，從 GitHub Releases 自動更新，不用任何第三方套件。Kotlin。<a href="https://github.com/agenga0320/sudoku">GitHub</a></p></li>
-      <li class="rv"><button type="button"><span class="nm">MangaReader</span><span class="meta">Android・2026</span></button>
-        <p class="desc">漫畫閱讀 App。解析網站頁面取得作品與章節，三種閱讀模式與縮放手勢，用前景服務在背景持續檢查追蹤作品的更新；資料全部存在手機本機。以 Product Flavors 管理多個版本，並寫了一鍵建置、驗證簽章、發布的腳本。Java・jsoup・Gradle。</p></li>
-      <li class="rv"><button type="button"><span class="nm">溯源由美官方網站</span><span class="meta">Web・2026</span></button>
-        <img src="img/origin-yumi.png" alt="溯源由美官方網站的首頁預覽：綠色商標、導覽列與事業介紹" width="1280" height="900" loading="lazy">
-        <p class="desc">為溯源由美株式会社重建官網，自製 WordPress 主題。從 EPS 原始檔自行轉出 SVG 商標，以設計 token 管理配色並實測 WCAG 對比度，支援日・英・簡中三語與 OGP 自動產生。PHP・CSS・Python。</p></li>
-      <li class="rv"><button type="button"><span class="nm">3D 地圖歷史影片</span><span class="meta">影片・2026・4 支</span></button>
-        <img src="img/yt-aVP-GUTAkx0.jpg" alt="林爽文事件影片的畫面：清代台灣的 3D 地圖" width="1280" height="720" loading="lazy">
-        <div class="desc">
-          <p>用 AI 從史料整理、旁白（AI 語音）到 3D 地圖動畫一路做成的歷史解說影片：一張真實地形的 3D 地圖，用塗色、年份和字幕講完一段歷史。Remotion・WebGL・FFmpeg。</p>
-          <ul class="vids">
-            <li><a href="https://youtu.be/aVP-GUTAkx0">林爽文事件｜3D 地圖看清代台灣最大民變（1786–1788）</a></li>
-            <li><a href="https://youtu.be/8XVI5YLLsjY">同一座島，二十八次改制｜臺灣行政區劃 1624–2014</a></li>
-            <li><a href="https://youtu.be/-15Jf3z2MhA">頂下郊拚：1853 年艋舺械鬥，打輸的一方開出了大稻埕</a></li>
-            <li><a href="https://youtu.be/E8kAZ9fkPco">織田信長的地盤怎麼變大｜3D 地圖看戰國霸主 1551–1582</a></li>
-          </ul>
-        </div></li>
-      <li class="rv"><button type="button"><span class="nm">日本麻將點數計算機</span><span class="meta">Android・2026</span></button>
-        <p class="desc">輸入手牌即可算出符數、翻數與點數，以 GitHub Releases 發布 APK。Kotlin・Gradle。</p></li>
-      <li class="rv"><button type="button"><span class="nm">myHistoryViewer</span><span class="meta">Web・2026</span></button>
-        <p class="desc">瀏覽與分析個人社群貼文、限時動態典藏的單檔網頁工具，有地圖與 AI 分析。JavaScript。</p></li>
-      <li class="rv"><button type="button"><span class="nm">Muse Feed</span><span class="meta">Android・2026</span></button>
-        <p class="desc">把 Threads 上的貼文依「一般／商業」分類整理的個人化動態牆 App。Android。</p></li>
-    </ul>
-  </section>
-
-  <section aria-label="關於我">
-    <div class="letter">
-      <p class="rv">我是陳鉅仁。2020 年從國立中央大學資訊工程學系畢業，在玉山銀行寫海外分行的系統，2022 年底來到日本。</p>
-      <p class="rv">在日本的前三年多，我在スリーティソフト做 Java 企業系統，從詳細設計、開發、測試到 WebLogic 的建置都做過。2026 年 5 月起在 MCT Japan，工作轉向全端與 AI。</p>
-      <p class="rv">中文是母語，日文 JLPT N1，英文 TOEIC 825。能用中日文寫設計書、開會，也替團隊做過口譯。</p>
-      <p class="rv">下班後我寫 Android App 和小工具，上面的專案大多是這樣來的。</p>
-      <dl class="facts rv">
-        <dt>學歷</dt><dd>國立中央大學 資訊工程學系（2020.06 畢業）</dd>
-        <dt>證照</dt><dd>基本資訊技術者（2025）、JLPT N1（2023）、TOEIC 825（2020）</dd>
-        <dt>技能</dt><dd>Java・Spring・JavaScript・PL/SQL・Oracle・SQL Server・PostgreSQL・Linux 實務 1 年以上；Python・FastAPI・TypeScript・Next.js・React・C#・C／C++・jQuery・MySQL・Docker 有實務經驗</dd>
-      </dl>
-      <p class="sign rv">陳鉅仁</p>
-      <p class="role">軟體工程師</p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact" aria-labelledby="contact-h">
-    <h2 id="contact-h" class="prompt rv"><span>有適合的職缺或專案？</span>直接寫信給我。</h2>
-    <form class="rv" action="mailto:agenga.chaos@gmail.com" method="get" enctype="text/plain">
-      <label for="msg" class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">想說的話</label>
-      <input id="msg" name="body" placeholder="想談的職缺或專案" autocomplete="off">
-      <button type="submit" aria-label="用郵件軟體寄出">→</button>
-    </form>
-    <p class="hint">按下箭頭會開啟你的郵件軟體，內容已經填好。</p>
-    <dl class="rows rv">
-      <dt>Email</dt><dd><a href="mailto:agenga.chaos@gmail.com">agenga.chaos@gmail.com</a></dd>
-      <dt>GitHub</dt><dd><a href="https://github.com/agenga0320">github.com/agenga0320</a></dd>
-      <dt>語言</dt><dd>中文・日本語・English</dd>
-    </dl>
-  </section>
-
-</div>
-
-
-</div>
-
-<footer>
-  <div class="ft">
-    <p>© 2026 陳鉅仁・最後更新 2026 年 11 月</p>
-    <a href="#">回到頂端</a>
   </div>
-</footer>
 
-<script>
-(() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // project index: hover, focus or tap makes a name active
-  const items = document.querySelectorAll('.names > li');
-  // descriptions collapse only on the desktop layout; on phones every one is open
-  const collapsible = matchMedia('(min-width: 861px)').matches;
-  const mark = () => collapsible && items.forEach(x => x.querySelector('button').setAttribute('aria-expanded', x.classList.contains('on')));
-  mark();
-  items.forEach(li => {
-    const act = () => { items.forEach(x => x.classList.toggle('on', x === li)); mark(); };
-    li.querySelector('button').addEventListener('mouseenter', act);
-    li.querySelector('button').addEventListener('focus', act);
-    li.querySelector('button').addEventListener('click', act);
-  });
+  <div class="job">
+    <div class="period">2026.05 – 現在</div>
+    <div>
+      <h3>就農補助資金管理系統開發</h3>
+      <p class="summary">集中管理農業法人與就農者從登錄、申請、審查到補助款請領的 Web 系統。</p>
+      <p class="meta">負責工程：基本設計～整合測試</p>
+      <ul>
+        <li>畫面、API、資料庫設計與設計文件撰寫</li>
+        <li>以 Next.js／React 開發畫面與輸入檢核</li>
+        <li>以 FastAPI 開發 API 與業務邏輯</li>
+        <li>申請、審查、退回／重新提交流程與角色權限控制</li>
+        <li>PDF 報表輸出、附件管理、郵件通知功能</li>
+        <li>PostgreSQL 資料表設計，以 Alembic 管理資料庫變更</li>
+        <li>測試、修正錯誤，以 Docker 建置環境與部署</li>
+        <li>運用 Claude Code／Codex 進行 AI 輔助開發</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>TypeScript</span><span>Next.js</span><span>React</span><span>PostgreSQL</span><span>Alembic</span><span>Docker</span><span>pytest</span></div>
+    </div>
+  </div>
 
-  // technology filter
-  const jobs = [...document.querySelectorAll('.job')];
-  const out = document.querySelector('.readout');
-  document.querySelectorAll('.filter button').forEach(b => b.addEventListener('click', () => {
-    const on = b.getAttribute('aria-pressed') !== 'true';
-    document.querySelectorAll('.filter button').forEach(x => x.setAttribute('aria-pressed', x === b && on));
-    const t = on ? b.dataset.t : null;
-    const hit = jobs.filter(j => t && j.dataset.tech.split(' ').includes(t));
-    jobs.forEach(j => j.classList.toggle('dim', !!t && !hit.includes(j)));
-    // say it in words too, not only by colour
-    document.querySelectorAll('.hit').forEach(s => s.remove());
-    hit.forEach(j => j.querySelector('h3').insertAdjacentHTML('beforeend', ` <span class="hit">用到 ${b.textContent}</span>`));
-    if (!t) { out.textContent = ''; return; }
-    const ws = hit.map(j => j.querySelector('.when').textContent);
-    const years = ws.flatMap(w => w.match(/\d{4}/g) || []).map(Number);
-    if (/現在/.test(ws.join())) years.push(2026);
-    out.textContent = hit.length
-      ? `${b.textContent}：用在 ${hit.length} 段經歷（${Math.min(...years)} – ${Math.max(...years)}）`
-      : `${b.textContent}：工作經歷中沒有用到`;
-  }));
+  <div class="job">
+    <div class="period">2026.05 – 2026.08</div>
+    <div>
+      <h3>簽核系統 MCP 伺服器與 API 開發</h3>
+      <p class="summary">讓 AI 助理（Claude 等）能透過 MCP 查詢、起草、送出與審核日本企業簽核 SaaS 上的申請。在既有的 VB.NET WebForms 系統之外另建 ASP.NET Core API，再由 Python MCP 伺服器呼叫。</p>
+      <ul>
+        <li>開發 SSO 登入，並處理 SSO 成功但簽核系統登入失敗等例外情況</li>
+        <li>開發申請附件的上傳、下載、刪除功能，加上權限與副檔名限制</li>
+        <li>MCP 伺服器的登入畫面、上傳畫面改善與流程修正</li>
+        <li>Azure 部署相關調整</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>MCP</span><span>ASP.NET Core</span><span>C#</span><span>VB.NET</span><span>Azure</span></div>
+    </div>
+  </div>
 
-  // contact: put the typed text into the mail
-  document.querySelector('form').addEventListener('submit', e => {
-    e.preventDefault();
-    const body = document.getElementById('msg').value.trim();
-    location.href = 'mailto:agenga.chaos@gmail.com?subject=' + encodeURIComponent('看了你的履歷網站') + '&body=' + encodeURIComponent(body);
-  });
+  <h3 class="employer">スリーティソフト<span>2022.12 – 2026.04</span></h3>
 
-  // entrances
-  if (reduce) { document.querySelectorAll('.rv').forEach(el => el.classList.add('in')); return; }
-  const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }),
-    { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.rv').forEach(el => rv.observe(el));})();
-</script>
+  <div class="job">
+    <div class="period">2025.09 – 2026.04</div>
+    <div>
+      <h3>船舶管理系統重建</h3>
+      <p class="summary">將既有的 C# 系統以 Java・React 重新開發。</p>
+      <p class="meta">團隊 15 人｜負責工程：詳細設計～整合測試</p>
+      <ul>
+        <li>後端／前端開發與單元測試</li>
+        <li>新開發各類申請共用的郵件寄送功能</li>
+        <li>弱點掃描與檢出問題的修正</li>
+        <li>日籍設計者與中國籍開發者之間的會議口譯與協調</li>
+        <li>每日例行發布的備份作業</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>Spring</span><span>React</span><span>Oracle</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2024.12 – 2025.08</div>
+    <div>
+      <h3>系統基礎架構更新</h3>
+      <p class="summary">因授權到期進行的基礎架構更新與系統架構調整。</p>
+      <p class="meta">團隊 15 人｜負責工程：基本設計～單元測試</p>
+      <ul>
+        <li>調查 WebLogic・Java 升級造成的不相容問題並撰寫報告</li>
+        <li>考量成本的伺服器規格設計</li>
+        <li>建置 WebLogic 與網域，並進行建置後測試</li>
+        <li>於每週例會報告進度與共享課題</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>WebLogic</span><span>Oracle</span><span>Linux</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2024.08 – 2024.11</div>
+    <div>
+      <h3>公務員資訊管理系統維護</h3>
+      <p class="summary">資訊管理系統的維護與基礎架構升級。</p>
+      <p class="meta">團隊 15 人｜負責工程：開發～單元測試、維運</p>
+      <ul>
+        <li>瀏覽器／OS 升級相關測試與測試報告</li>
+        <li>依客戶需求開發 Shell 腳本、修改程式</li>
+        <li>處理客戶緊急需求與日常維護</li>
+        <li>撰寫每日／每週系統使用狀況報告</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>TERASOLUNA</span><span>JSP</span><span>Hibernate</span><span>PostgreSQL</span><span>Shell</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2022.12 – 2024.07</div>
+    <div>
+      <h3>網路管理系統新版本開發</h3>
+      <p class="summary">既有系統的新版本開發。</p>
+      <p class="meta">團隊 15 人｜負責工程：詳細設計～整合測試</p>
+      <ul>
+        <li>詳細設計與詳細設計書撰寫</li>
+        <li>新增畫面、API、批次程式</li>
+        <li>系統測試與測試報告撰寫</li>
+        <li>處理客戶的調查需求</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>Spring</span><span>JSF</span><span>Hibernate</span><span>PostgreSQL</span></div>
+    </div>
+  </div>
+
+  <h3 class="employer">玉山銀行 資訊處<span>2021.01 – 2021.06</span></h3>
+
+  <div class="job">
+    <div class="period">2021.01 – 2021.06</div>
+    <div>
+      <h3>軟體工程師</h3>
+      <p class="summary">隸屬海外資訊部，負責解決海外分行的業務需求。完成新人訓練後，主要負責香港分行開戶系統上線，以及開戶、存款、匯款功能的維護與追加開發。</p>
+      <p class="meta">團隊 30 人｜負責工程：詳細設計～單元測試</p>
+      <ul>
+        <li>香港分行開戶系統上線</li>
+        <li>程式開發、批次與報表開發，以及追加開發相關測試</li>
+        <li>驗收外包廠商的工作成果、確認作業進度</li>
+        <li>每日新版程式部署</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>Hibernate</span><span>SQL Server</span><span>Oracle</span></div>
+    </div>
+  </div>
+
+  <h3 class="employer">均一教育平台<span>2019.06 – 2020.01</span></h3>
+
+  <div class="job">
+    <div class="period">2019.06 – 2020.01</div>
+    <div>
+      <h3>軟體 QA 實習生</h3>
+      <p class="summary">以網頁除錯（Debug）為主，因此對網頁架構有一定程度的了解。也參與大量團隊協作，學到業界的溝通方式、開發流程，以及對工程師能力的要求。</p>
+    </div>
+  </div>
+
+  <h2>其他經歷</h2>
+  <div class="job">
+    <div class="period">2019.09 – 2020.01</div>
+    <div>
+      <h3>設計思考通識課程｜助教</h3>
+      <p class="summary">課程目標是讓學生組成團隊做出一套桌遊。擔任助教期間負責引導學生的討論方向並適時提出建議，最後 8 組學生團隊都成功做出桌遊。</p>
+    </div>
+  </div>
+
+  <h2>技能</h2>
+  <h4>實務經驗 1 年以上</h4>
+  <div class="tags strong">
+    <span>Java</span><span>Spring</span><span>JavaScript</span><span>Ajax</span><span>HTML</span><span>PL/SQL</span>
+    <span>Oracle</span><span>SQL Server</span><span>PostgreSQL</span><span>Windows</span><span>Linux</span>
+  </div>
+  <h4>有實務經驗</h4>
+  <div class="tags">
+    <span>Python</span><span>FastAPI</span><span>TypeScript</span><span>Next.js</span><span>React</span><span>C#</span><span>C</span><span>C++</span>
+    <span>jQuery</span><span>MySQL</span><span>Docker</span><span>WebLogic</span><span>Claude Code</span><span>Codex</span>
+  </div>
+  <h4>語言</h4>
+  <div class="tags"><span>中文（母語）</span><span>日文（JLPT N1）</span><span>英文（TOEIC 825）</span></div>
+
+  <h2>個人與共同開發專案</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="img/havalon.png" alt="HAVALON 的首頁畫面" width="860" height="1800" loading="lazy">
+      <h3>HAVALON（共同開發）</h3>
+      <p>手機多人連線的阿瓦隆桌遊，含擴充角色、語音通話、逐字稿與 AI 復盤匯出。我負責：圓桌與隊長輪替的畫面、投票／任務卡改用對話框、語音在手機休眠後自動重連、麥克風被拒時的降級處理、卡住的請求逾時、過期資料清除，以及對比度與點擊範圍等易用性修正。</p>
+      <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Drizzle ORM</span><span>Cloudflare Workers</span><span>Vercel</span></div>
+      <a href="https://havalon.vercel.app">線上遊玩</a>
+    </div>
+    <div class="card">
+      <img src="img/yt-aVP-GUTAkx0.jpg" alt="林爽文事件影片的畫面：清代台灣的 3D 地圖" width="1280" height="720" loading="lazy">
+      <h3>3D 地圖歷史影片</h3>
+      <p>用 AI 從史料整理、旁白（AI 語音）到 3D 地圖動畫一路做成的歷史解說影片：一張真實地形的 3D 地圖，用塗色、年份和字幕講完一段歷史。</p>
+      <ul>
+        <li><a href="https://youtu.be/aVP-GUTAkx0">林爽文事件（1786–1788）</a></li>
+        <li><a href="https://youtu.be/8XVI5YLLsjY">臺灣行政區劃 1624–2014</a></li>
+        <li><a href="https://youtu.be/-15Jf3z2MhA">頂下郊拚（1853）</a></li>
+        <li><a href="https://youtu.be/E8kAZ9fkPco">織田信長的地盤（1551–1582）</a></li>
+      </ul>
+      <div class="tags"><span>Remotion</span><span>WebGL</span><span>FFmpeg</span><span>AI 語音</span></div>
+    </div>
+    <div class="card">
+      <h3>AI 數獨教練</h3>
+      <p>卡關時由 AI 分三層引導下一步該怎麼想，而不是直接給答案；AI 的推理會先用正確解答核對，錯了就不顯示。支援 Claude、ChatGPT、Gemini 等 6 家 API，以及照片匯入題目、筆記、鎖定數字模式，並可從 GitHub Releases 自動更新。不使用第三方套件。</p>
+      <div class="tags"><span>Android</span><span>Kotlin</span><span>LLM API</span></div>
+      <a href="https://github.com/agenga0320/sudoku">GitHub</a>
+    </div>
+    <div class="card">
+      <h3>MangaReader</h3>
+      <p>Android 漫畫閱讀 App。解析網站頁面取得作品與章節，提供三種閱讀模式、縮放手勢、追蹤作品更新（前景服務在背景也能持續檢查）。資料全部存在手機本機，以 Product Flavors 管理多個版本，並寫了一鍵建置・驗證簽章・發布的腳本。</p>
+      <div class="tags"><span>Android</span><span>Java</span><span>jsoup</span><span>Gradle</span></div>
+    </div>
+    <div class="card">
+      <img src="img/origin-yumi.png" alt="溯源由美官方網站的首頁預覽" width="1120" height="700" loading="lazy">
+      <h3>溯源由美官方網站</h3>
+      <p>為溯源由美株式会社重建官網，自製 WordPress 主題。從 EPS 原始檔自行轉出 SVG 商標，以設計 token 管理配色並實測 WCAG 對比度，支援日・英・簡中三語、OGP／meta 自動產生。</p>
+      <div class="tags"><span>WordPress</span><span>PHP</span><span>CSS</span><span>Python</span></div>
+    </div>
+    <div class="card">
+      <h3>日本麻將點數計算機</h3>
+      <p>輸入手牌即可計算符數、翻數與點數的 Android App，以 GitHub Releases 發布 APK。</p>
+      <div class="tags"><span>Android</span><span>Kotlin</span><span>Gradle</span></div>
+    </div>
+    <div class="card">
+      <h3>myHistoryViewer</h3>
+      <p>瀏覽與分析個人社群貼文、限時動態典藏的單檔網頁工具，含地圖與 AI 分析。</p>
+      <div class="tags"><span>JavaScript</span><span>單檔 Web</span></div>
+    </div>
+    <div class="card">
+      <h3>Muse Feed</h3>
+      <p>把 Threads 上的貼文依「一般／商業」分類整理的個人化動態牆 Android App。</p>
+      <div class="tags"><span>Android</span></div>
+    </div>
+  </div>
+
+  <footer>最後更新：2026 年 11 月｜© 2026 陳鉅仁</footer>
+</main>
 </body>
 </html>
