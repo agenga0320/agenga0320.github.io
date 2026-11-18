@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kyojin Chin | Software Engineer Résumé</title>
+<meta name="description" content="Kyojin Chin (陳鉅仁), a Taiwanese software engineer working in Japan. Java enterprise systems, full-stack development with Next.js and FastAPI, MCP and AI-assisted development. Native Chinese, Japanese JLPT N1, English TOEIC 825.">
+<link rel="stylesheet" href="style.css">
+<link rel="alternate" hreflang="zh-Hant" href="https://agenga0320.github.io/">
+<link rel="alternate" hreflang="ja" href="https://agenga0320.github.io/ja.html">
+<link rel="alternate" hreflang="en" href="https://agenga0320.github.io/en.html">
+</head>
+<body>
+<main>
+  <nav class="lang" aria-label="Language"><a href="index.html" lang="zh-Hant">中文</a><a href="ja.html" lang="ja">日本語</a><a href="en.html" aria-current="page" lang="en">English</a></nav>
+  <h1>Kyojin Chin<small style="font-size:.5em;font-weight:normal;margin-left:.6em">陳鉅仁</small></h1>
+  <p class="role">Software Engineer | Java · Web · AI-assisted development</p>
+  <p>About four and a half years of software development: in Taiwan from 2021 and in Japan since December 2022. I have worked on enterprise systems for banking, the public sector, ship management and agricultural subsidies, and I can own a feature from design through testing and deployment. I also work across teams in Japanese and Chinese.</p>
+  <ul class="highlights">
+    <li><strong>Java enterprise systems</strong>: new development, rewrites, maintenance and platform upgrades with Spring, Hibernate, Oracle and PostgreSQL</li>
+    <li><strong>Full-stack development</strong>: Next.js/React, FastAPI and PostgreSQL, from database design to Docker deployment</li>
+    <li><strong>AI-assisted development</strong>: Claude Code and Codex on production projects, plus an AI sales assistant and MCP integrations</li>
+    <li><strong>Chinese, Japanese and English</strong>: JLPT N1 and TOEIC 825; interpreted meetings between Japanese designers and Chinese developers</li>
+  </ul>
+  <p class="links">
+    <a href="mailto:agenga.chaos@gmail.com">agenga.chaos@gmail.com</a>
+    <a href="https://github.com/agenga0320">GitHub</a>
+  </p>
+
+  <h2>Education and certifications</h2>
+  <dl class="facts">
+    <dt>Education</dt><dd>B.S., Computer Science and Information Engineering, National Central University, Taiwan (June 2020)</dd>
+    <dt>Certifications</dt><dd>Fundamental Information Technology Engineer Examination, Japan (2025)</dd>
+    <dt></dt><dd>Japanese-Language Proficiency Test N1 (2023)</dd>
+    <dt></dt><dd>TOEIC 825 (April 2020)</dd>
+  </dl>
+
+  <h2>Work experience</h2>
+
+  <h3 class="employer">MCT Japan<span>May 2026 – present</span></h3>
+
+  <div class="job">
+    <div class="period">2026.10 – present</div>
+    <div>
+      <h3>AI sales assistant (client demos)</h3>
+      <p class="summary">AI sales assistant demos for several Japanese manufacturing and automotive clients, covering order intake and specification management.</p>
+      <ul>
+        <li>Designed and adapted screens to each client's business process</li>
+        <li>Derived client-specific demos quickly from a shared base version</li>
+        <li>Deployed to Azure so clients could try them hands-on</li>
+      </ul>
+      <div class="tags"><span>Web</span><span>Azure</span><span>AI</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2026.05 – present</div>
+    <div>
+      <h3>Agricultural employment subsidy management system</h3>
+      <p class="summary">A web system that manages the whole flow for farming corporations and new farmers: registration, applications, review and subsidy payment requests.</p>
+      <p class="meta">Phases: basic design to integration testing</p>
+      <ul>
+        <li>Screen, API and database design, and the design documents</li>
+        <li>Screens and input validation in Next.js/React</li>
+        <li>APIs and business logic in FastAPI</li>
+        <li>Application, review, return and resubmission flows with role-based permissions</li>
+        <li>PDF reports, attachment management and email notifications</li>
+        <li>PostgreSQL table design, with schema changes managed in Alembic</li>
+        <li>Testing, bug fixing, and environment setup and deployment with Docker</li>
+        <li>AI-assisted development with Claude Code and Codex</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>TypeScript</span><span>Next.js</span><span>React</span><span>PostgreSQL</span><span>Alembic</span><span>Docker</span><span>pytest</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2026.05 – 2026.08</div>
+    <div>
+      <h3>MCP server and API for a workflow approval system</h3>
+      <p class="summary">Lets AI assistants such as Claude look up, draft, submit and approve requests in a Japanese workflow-approval SaaS through MCP. A new ASP.NET Core API sits beside the existing VB.NET WebForms system and is called from a Python MCP server.</p>
+      <ul>
+        <li>SSO sign-in, including the case where SSO succeeds but sign-in to the approval system fails</li>
+        <li>Upload, download and deletion of request attachments, restricted by permission and file type</li>
+        <li>Improvements and flow fixes to the MCP server's sign-in and upload screens</li>
+        <li>Azure deployment changes</li>
+      </ul>
+      <div class="tags"><span>Python</span><span>FastAPI</span><span>MCP</span><span>ASP.NET Core</span><span>C#</span><span>VB.NET</span><span>Azure</span></div>
+    </div>
+  </div>
+
+  <h3 class="employer">スリーティソフト<span>Dec 2022 – Apr 2026</span></h3>
+
+  <div class="job">
+    <div class="period">2025.09 – 2026.04</div>
+    <div>
+      <h3>Ship management system rewrite</h3>
+      <p class="summary">Rewrote an existing C# system in Java and React.</p>
+      <p class="meta">Team of 15 | Phases: detailed design to integration testing</p>
+      <ul>
+        <li>Back-end and front-end development with unit tests</li>
+        <li>A new shared email-sending feature used by all request types</li>
+        <li>Fixes for issues found in the vulnerability assessment</li>
+        <li>Interpreting and coordination between Japanese designers and Chinese developers</li>
+        <li>Backups for the daily scheduled releases</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>Spring</span><span>React</span><span>Oracle</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2024.12 – 2025.08</div>
+    <div>
+      <h3>Platform upgrade</h3>
+      <p class="summary">Platform renewal and configuration review ahead of a license expiry.</p>
+      <p class="meta">Team of 15 | Phases: basic design to unit testing</p>
+      <ul>
+        <li>Investigated and reported incompatibilities from the WebLogic and Java upgrade</li>
+        <li>Designed server specifications with cost reduction in mind</li>
+        <li>Built WebLogic and its domains, and tested the result</li>
+        <li>Reported progress and issues at weekly meetings</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>WebLogic</span><span>Oracle</span><span>Linux</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2024.08 – 2024.11</div>
+    <div>
+      <h3>Civil-servant information system maintenance</h3>
+      <p class="summary">Maintenance and platform upgrades for an information management system.</p>
+      <p class="meta">Team of 15 | Phases: development to unit testing, operations</p>
+      <ul>
+        <li>Testing and test reports for browser and OS upgrades</li>
+        <li>Shell scripts and program changes requested by the client</li>
+        <li>Urgent client requests and routine maintenance</li>
+        <li>Daily and weekly system usage reports</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>TERASOLUNA</span><span>JSP</span><span>Hibernate</span><span>PostgreSQL</span><span>Shell</span></div>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="period">2022.12 – 2024.07</div>
+    <div>
+      <h3>Network management system, new version</h3>
+      <p class="summary">Development of a new version of an existing system.</p>
+      <p class="meta">Team of 15 | Phases: detailed design to integration testing</p>
+      <ul>
+        <li>Detailed design and detailed design documents</li>
+        <li>New screens, APIs and batch jobs</li>
+        <li>System testing and test reports</li>
+        <li>Investigations requested by the client</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>Spring</span><span>JSF</span><span>Hibernate</span><span>PostgreSQL</span></div>
+    </div>
+  </div>
+
+  <h3 class="employer">E.SUN Bank, IT Division (Taiwan)<span>Jan 2021 – Jun 2021</span></h3>
+
+  <div class="job">
+    <div class="period">2021.01 – 2021.06</div>
+    <div>
+      <h3>Software Engineer</h3>
+      <p class="summary">In the Overseas IT department, handling the business needs of overseas branches. After new-hire training I mainly worked on launching the Hong Kong branch's account-opening system and on maintaining and extending account opening, deposits and remittances.</p>
+      <p class="meta">Team of 30 | Phases: detailed design to unit testing</p>
+      <ul>
+        <li>Launch of the Hong Kong branch account-opening system</li>
+        <li>Programs, batch jobs and reports, with testing for new features</li>
+        <li>Acceptance of vendor deliverables and progress tracking</li>
+        <li>Daily deployment of new releases</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>Hibernate</span><span>SQL Server</span><span>Oracle</span></div>
+    </div>
+  </div>
+
+  <h3 class="employer">Junyi Academy<span>Jun 2019 – Jan 2020</span></h3>
+
+  <div class="job">
+    <div class="period">2019.06 – 2020.01</div>
+    <div>
+      <h3>Software QA Intern</h3>
+      <p class="summary">Mostly web debugging, which gave me a solid understanding of how web pages are built. Working with many people taught me how the industry communicates, how development runs, and what is expected of an engineer.</p>
+    </div>
+  </div>
+
+  <h2>Other experience</h2>
+  <div class="job">
+    <div class="period">2019.09 – 2020.01</div>
+    <div>
+      <h3>Teaching assistant, Design Thinking (general education course)</h3>
+      <p class="summary">Students worked in teams to design a board game. I guided their discussions and gave advice along the way; all eight teams finished their games.</p>
+    </div>
+  </div>
+
+  <h2>Competitions</h2>
+  <dl class="facts">
+    <dt>Collegiate Programming Examination (CPE)</dt><dd>Ranked 18th of 2,214</dd>
+    <dt>Mei-Chu Hackathon 2018</dt><dd>Best Creative Award</dd>
+    <dt>ICPC 2018 Taiwan</dt><dd>Participant</dd>
+    <dt>TOPC 2018</dt><dd>Participant</dd>
+    <dt>ITSA 2018</dt><dd>Participant</dd>
+    <dt>NCPC 2018</dt><dd>Participant</dd>
+  </dl>
+
+  <h2>Skills</h2>
+  <h4>One year or more in production</h4>
+  <div class="tags strong">
+    <span>Java</span><span>Spring</span><span>JavaScript</span><span>Ajax</span><span>HTML</span><span>PL/SQL</span>
+    <span>Oracle</span><span>SQL Server</span><span>PostgreSQL</span><span>Windows</span><span>Linux</span>
+  </div>
+  <h4>Used in production</h4>
+  <div class="tags">
+    <span>Python</span><span>FastAPI</span><span>TypeScript</span><span>Next.js</span><span>React</span><span>C#</span><span>C</span><span>C++</span>
+    <span>jQuery</span><span>MySQL</span><span>Docker</span><span>WebLogic</span><span>Claude Code</span><span>Codex</span>
+  </div>
+  <h4>Languages</h4>
+  <div class="tags"><span>Chinese (native)</span><span>Japanese (JLPT N1)</span><span>English (TOEIC 825)</span></div>
+
+  <h2>Personal and collaborative projects</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="img/havalon.png" alt="The HAVALON start screen" width="860" height="1800" loading="lazy">
+      <h3>HAVALON (collaboration)</h3>
+      <p>A multiplayer Avalon board game for phones, with expansion roles, voice chat, transcripts and an AI-generated game review. My part: the round-table view with leader rotation, voting and quest cards as dialogs, automatic voice reconnection after a phone sleeps, a fallback when microphone access is refused, timeouts for stalled requests, cleanup of expired data, and accessibility fixes for contrast and tap targets.</p>
+      <div class="tags"><span>Next.js</span><span>TypeScript</span><span>Drizzle ORM</span><span>Cloudflare Workers</span><span>Vercel</span></div>
+      <a href="https://havalon.vercel.app">Play it</a>
+    </div>
+    <div class="card">
+      <img src="img/yt-aVP-GUTAkx0.jpg" alt="A frame from the Lin Shuangwen video: a 3D map of Qing-era Taiwan" width="1280" height="720" loading="lazy">
+      <h3>3D map history videos</h3>
+      <p>History explainers made with AI from research through AI-voiced narration to 3D map animation. Each film uses one real-terrain 3D map and tells the story with colored territory, years and captions. The videos are in Chinese.</p>
+      <ul>
+        <li><a href="https://youtu.be/aVP-GUTAkx0">The Lin Shuangwen rebellion (1786–1788)</a></li>
+        <li><a href="https://youtu.be/8XVI5YLLsjY">Taiwan's administrative divisions, 1624–2014</a></li>
+        <li><a href="https://youtu.be/-15Jf3z2MhA">The Ding-Xia Jiao feud in Bangka (1853)</a></li>
+        <li><a href="https://youtu.be/E8kAZ9fkPco">How Oda Nobunaga's territory grew (1551–1582)</a></li>
+      </ul>
+      <div class="tags"><span>Remotion</span><span>WebGL</span><span>FFmpeg</span><span>AI voice</span></div>
+    </div>
+    <div class="card">
+      <h3>AI Sudoku Coach</h3>
+      <p>When you are stuck, the AI explains how to think about the next move in three levels instead of giving the answer, and its reasoning is checked against the solution before it is shown. Supports six AI providers including Claude, ChatGPT and Gemini, importing puzzles from photos, pencil marks, a number-lock mode and self-updates from GitHub Releases. No third-party libraries.</p>
+      <div class="tags"><span>Android</span><span>Kotlin</span><span>LLM API</span></div>
+      <a href="https://github.com/agenga0320/sudoku">GitHub</a>
+    </div>
+    <div class="card">
+      <h3>MangaReader</h3>
+      <p>An Android manga reader. It parses web pages for titles and chapters, offers three reading modes and zoom gestures, and checks followed titles for updates in a foreground service that keeps running in the background. All data stays on the phone. Multiple editions are managed with product flavors, with a one-step script that builds, verifies signatures and publishes.</p>
+      <div class="tags"><span>Android</span><span>Java</span><span>jsoup</span><span>Gradle</span></div>
+    </div>
+    <div class="card">
+      <img src="img/origin-yumi.png" alt="Preview of the Origin Yumi website home page" width="1120" height="700" loading="lazy">
+      <h3>Origin Yumi corporate website</h3>
+      <p>Rebuilt the corporate website of Origin Yumi Co., Ltd. (溯源由美株式会社) with a custom WordPress theme. Converted the logo from the original EPS to SVG myself, managed colors with design tokens and measured WCAG contrast, with Japanese, English and Simplified Chinese and automatic OGP/meta tags.</p>
+      <div class="tags"><span>WordPress</span><span>PHP</span><span>CSS</span><span>Python</span></div>
+    </div>
+    <div class="card">
+      <h3>Japanese Mahjong Score Calculator</h3>
+      <p>An Android app that calculates fu, han and points from a hand, published as an APK on GitHub Releases.</p>
+      <div class="tags"><span>Android</span><span>Kotlin</span><span>Gradle</span></div>
+    </div>
+    <div class="card">
+      <h3>myHistoryViewer</h3>
+      <p>A single-file web tool for browsing and analyzing an archive of your own social posts and stories, with a map view and AI analysis.</p>
+      <div class="tags"><span>JavaScript</span><span>Single-file web</span></div>
+    </div>
+    <div class="card">
+      <h3>Muse Feed</h3>
+      <p>An Android app that sorts Threads posts into "general" and "business" for a personalized feed.</p>
+      <div class="tags"><span>Android</span></div>
+    </div>
+  </div>
+
+  <footer>Last updated: November 2026 | © 2026 Kyojin Chin</footer>
+</main>
+</body>
+</html>
