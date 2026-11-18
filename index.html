@@ -53,7 +53,7 @@
   .mark { font-family:var(--display); font-weight:900; font-size:var(--step-lead); letter-spacing:-0.02em; }
   .hero-body { align-self:start; margin-top:22svh; display:grid; justify-items:center; gap:28px; padding-bottom:22svh; }
   .hero h1 { font-size:var(--step-display); line-height:1; }
-  .hero h1 span { display:block; font-size:.5em; margin-top:.25em; }
+  .hero h1 span { display:block; font-size:var(--step-head); margin-top:.25em; }
   .hero p { max-width:28em; text-wrap:balance; }
   .btn { display:inline-block; background:var(--accent); color:var(--accent-ink); font-weight:600; text-decoration:none; padding:16px 28px; transition:transform .2s var(--ease), background .2s; }
   .btn:hover { color:var(--accent-ink); background:#d9b871; transform:translateY(-2px); }
@@ -75,7 +75,7 @@
   .filter button[aria-pressed="true"] { background:var(--accent); color:var(--accent-ink); }
   .readout { min-height:1.6em; color:var(--muted); font-size:var(--step-small); margin-bottom:48px; }
   .group { margin-top:56px; }
-  .group-name { color:var(--muted); margin-bottom:8px; }
+  .group-name { font-size:var(--step-lead); font-weight:600; margin-bottom:8px; }
   .job { padding:18px 0; transition:opacity .3s; }
   .job-head { display:flex; justify-content:space-between; align-items:baseline; gap:24px; }
   .job h3 { font-family:var(--text); font-weight:600; font-size:var(--step-body); letter-spacing:0; line-height:1.4; }
@@ -84,7 +84,8 @@
   .job ul { padding-left:1.1em; }
   .job .stack { color:var(--muted); font-size:var(--step-small); }
   .job.dim h3, .job.dim p, .job.dim li { color:var(--muted); }
-  .job.dim { opacity:.75; }
+  .hit { color:var(--accent); font-size:var(--step-small); font-weight:600; white-space:nowrap; }
+  .job li::marker { color:var(--accent); }
 
   /* work index */
   .names { list-style:none; margin:0; padding:0; }
@@ -112,6 +113,7 @@
   .prompt span { display:block; color:var(--muted); }
   form { position:relative; max-width:520px; margin-top:28px; }
   form input { width:100%; height:64px; border:0; background:#f4efe8; color:#0c0a08; font:inherit; padding:0 72px 0 20px; }
+  form input::placeholder { color:#5e5850; opacity:1; }
   form input:focus { outline:2px solid var(--accent); outline-offset:-2px; }
   form button { position:absolute; right:10px; top:10px; width:44px; height:44px; border:0; border-radius:50%; background:var(--accent); color:var(--accent-ink); font-size:20px; cursor:pointer; transition:transform .2s var(--ease); }
   form button:hover { transform:translateX(3px); }
@@ -169,7 +171,7 @@
     </nav>
     <div class="hero-body">
       <h1>陳鉅仁<span>在日本做系統開發</span></h1>
-      <p>台灣出身的軟體工程師。Java 企業系統、Next.js／FastAPI 全端，以及 MCP 與 AI 輔助開發。中文母語，日文 JLPT N1，英文 TOEIC 825。</p>
+      <p>Java 企業系統、全端與 AI 輔助開發。中文母語，日文 N1，英文 TOEIC 825。</p>
       <a class="btn" href="mailto:agenga.chaos@gmail.com">寫信給我</a>
     </div>
   </header>
@@ -390,8 +392,12 @@
 
   // project index: hover, focus or tap makes a name active
   const items = document.querySelectorAll('.names li');
+  // descriptions collapse only on the desktop layout; on phones every one is open
+  const collapsible = matchMedia('(min-width: 861px)').matches;
+  const mark = () => collapsible && items.forEach(x => x.querySelector('button').setAttribute('aria-expanded', x.classList.contains('on')));
+  mark();
   items.forEach(li => {
-    const act = () => { items.forEach(x => x.classList.toggle('on', x === li)); show(li.dataset.stage); };
+    const act = () => { items.forEach(x => x.classList.toggle('on', x === li)); mark(); show(li.dataset.stage); };
     li.querySelector('button').addEventListener('mouseenter', act);
     li.querySelector('button').addEventListener('focus', act);
     li.querySelector('button').addEventListener('click', act);
@@ -406,6 +412,9 @@
     const t = on ? b.dataset.t : null;
     const hit = jobs.filter(j => t && j.dataset.tech.split(' ').includes(t));
     jobs.forEach(j => j.classList.toggle('dim', !!t && !hit.includes(j)));
+    // say it in words too, not only by colour
+    document.querySelectorAll('.hit').forEach(s => s.remove());
+    hit.forEach(j => j.querySelector('h3').insertAdjacentHTML('beforeend', ` <span class="hit">用到 ${b.textContent}</span>`));
     if (!t) { out.textContent = ''; return; }
     const ws = hit.map(j => j.querySelector('.when').textContent);
     const years = ws.flatMap(w => w.match(/\d{4}/g) || []).map(Number);
