@@ -86,6 +86,9 @@
   .names .desc { display:none; margin-top:10px; max-width:46ch; color:var(--ink); }
   .names li.on .desc { display:block; }
   .names .desc a { color:var(--accent); }
+  .vids { margin:12px 0 0; padding-left:1.1em; display:grid; gap:8px; }
+  .names .vids li { padding:0; }
+  .vids li::marker { color:var(--accent); }
   .names img { display:none; width:100%; max-width:640px; height:auto; aspect-ratio:16/10; object-fit:cover; object-position:50% 0; margin-top:16px; }
   .names li.on img { display:block; }
 
@@ -277,9 +280,17 @@
       <li class="rv"><button type="button"><span class="nm">溯源由美官方網站</span><span class="meta">Web・2026</span></button>
         <img src="img/origin-yumi.png" alt="溯源由美官方網站的首頁預覽：綠色商標、導覽列與事業介紹" width="1280" height="900" loading="lazy">
         <p class="desc">為溯源由美株式会社重建官網，自製 WordPress 主題。從 EPS 原始檔自行轉出 SVG 商標，以設計 token 管理配色並實測 WCAG 對比度，支援日・英・簡中三語與 OGP 自動產生。PHP・CSS・Python。</p></li>
-      <li class="rv"><button type="button"><span class="nm">台灣行政區衛星片</span><span class="meta">影片・2026</span></button>
-        <img src="img/tp.jpg" alt="台北盆地的衛星影像" width="2800" height="1680" loading="lazy">
-        <p class="desc">用衛星影像與 3D 運鏡介紹台灣行政區，全部以程式生成的影片。Remotion・WebGL・FFmpeg。</p></li>
+      <li class="rv"><button type="button"><span class="nm">3D 地圖歷史影片</span><span class="meta">影片・2026・4 支</span></button>
+        <img src="img/yt-aVP-GUTAkx0.jpg" alt="林爽文事件影片的畫面：清代台灣的 3D 地圖" width="1280" height="720" loading="lazy">
+        <div class="desc">
+          <p>用 AI 從史料整理、旁白（AI 語音）到 3D 地圖動畫一路做成的歷史解說影片：一張真實地形的 3D 地圖，用塗色、年份和字幕講完一段歷史。Remotion・WebGL・FFmpeg。</p>
+          <ul class="vids">
+            <li><a href="https://youtu.be/aVP-GUTAkx0">林爽文事件｜3D 地圖看清代台灣最大民變（1786–1788）</a></li>
+            <li><a href="https://youtu.be/8XVI5YLLsjY">同一座島，二十八次改制｜臺灣行政區劃 1624–2014</a></li>
+            <li><a href="https://youtu.be/-15Jf3z2MhA">頂下郊拚：1853 年艋舺械鬥，打輸的一方開出了大稻埕</a></li>
+            <li><a href="https://youtu.be/E8kAZ9fkPco">織田信長的地盤怎麼變大｜3D 地圖看戰國霸主 1551–1582</a></li>
+          </ul>
+        </div></li>
       <li class="rv"><button type="button"><span class="nm">日本麻將點數計算機</span><span class="meta">Android・2026</span></button>
         <p class="desc">輸入手牌即可算出符數、翻數與點數，以 GitHub Releases 發布 APK。Kotlin・Gradle。</p></li>
       <li class="rv"><button type="button"><span class="nm">myHistoryViewer</span><span class="meta">Web・2026</span></button>
@@ -333,7 +344,7 @@
     </div>
     <div>
       <p class="big">陳鉅仁</p>
-      <p class="credit">衛星影像：Sentinel-2 cloudless 2016 by EOX IT Services GmbH（CC BY 4.0，含經修改的 Copernicus Sentinel 2016 資料）。最後更新：2026 年 11 月。</p>
+      <p class="credit">最後更新：2026 年 11 月。</p>
     </div>
   </div>
 </footer>
@@ -342,7 +353,7 @@
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   // project index: hover, focus or tap makes a name active
-  const items = document.querySelectorAll('.names li');
+  const items = document.querySelectorAll('.names > li');
   // descriptions collapse only on the desktop layout; on phones every one is open
   const collapsible = matchMedia('(min-width: 861px)').matches;
   const mark = () => collapsible && items.forEach(x => x.querySelector('button').setAttribute('aria-expanded', x.classList.contains('on')));
