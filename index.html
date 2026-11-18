@@ -27,180 +27,216 @@
     <a href="https://github.com/agenga0320">GitHub</a>
   </p>
 
-  <h2>學歷與證照</h2>
-  <dl class="facts">
-    <dt>學歷</dt><dd>國立中央大學 資訊工程學系（2020.06 畢業）</dd>
-    <dt>證照</dt><dd>基本資訊技術者（2025）</dd>
-    <dt></dt><dd>日本語能力試驗 JLPT N1（2023）</dd>
-    <dt></dt><dd>TOEIC 825 分（2020.04）</dd>
-  </dl>
+  <h2>年表</h2>
+  <div class="timeline">
 
-  <h2>工作經歷</h2>
+    <section class="year" aria-label="2026 年">
+      <p class="yr">2026</p>
+      <div>
+        <article class="ev">
+          <h3>AI 業務助理（企業示範）</h3>
+          <p class="when">2026.10 – 現在｜MCT Japan</p>
+          <p class="summary">為多家日本製造業、汽車業客戶製作的 AI 業務助理示範，涵蓋接單、規格書管理等流程。</p>
+          <ul>
+            <li>依各客戶的業務流程設計並調整畫面</li>
+            <li>以共通的基礎版本快速衍生出各客戶專用的示範</li>
+            <li>部署至 Azure 供客戶實際操作</li>
+          </ul>
+          <div class="tags"><span>Web</span><span>Azure</span><span>AI</span></div>
+        </article>
+        <article class="ev">
+          <h3>就農補助資金管理系統開發</h3>
+          <p class="when">2026.05 – 現在｜MCT Japan｜負責工程：基本設計～整合測試</p>
+          <p class="summary">集中管理農業法人與就農者從登錄、申請、審查到補助款請領的 Web 系統。</p>
+          <ul>
+            <li>畫面、API、資料庫設計與設計文件撰寫</li>
+            <li>以 Next.js／React 開發畫面與輸入檢核</li>
+            <li>以 FastAPI 開發 API 與業務邏輯</li>
+            <li>申請、審查、退回／重新提交流程與角色權限控制</li>
+            <li>PDF 報表輸出、附件管理、郵件通知功能</li>
+            <li>PostgreSQL 資料表設計，以 Alembic 管理資料庫變更</li>
+            <li>測試、修正錯誤，以 Docker 建置環境與部署</li>
+            <li>運用 Claude Code／Codex 進行 AI 輔助開發</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>TypeScript</span><span>Next.js</span><span>React</span><span>PostgreSQL</span><span>Alembic</span><span>Docker</span><span>pytest</span></div>
+        </article>
+        <article class="ev">
+          <h3>簽核系統 MCP 伺服器與 API 開發</h3>
+          <p class="when">2026.05 – 2026.08｜MCT Japan</p>
+          <p class="summary">讓 AI 助理（Claude 等）能透過 MCP 查詢、起草、送出與審核日本企業簽核 SaaS 上的申請。在既有的 VB.NET WebForms 系統之外另建 ASP.NET Core API，再由 Python MCP 伺服器呼叫。</p>
+          <ul>
+            <li>開發 SSO 登入，並處理 SSO 成功但簽核系統登入失敗等例外情況</li>
+            <li>開發申請附件的上傳、下載、刪除功能，加上權限與副檔名限制</li>
+            <li>MCP 伺服器的登入畫面、上傳畫面改善與流程修正</li>
+            <li>Azure 部署相關調整</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>FastAPI</span><span>MCP</span><span>ASP.NET Core</span><span>C#</span><span>VB.NET</span><span>Azure</span></div>
+        </article>
+        <article class="ev ev-short">
+          <h3>加入 MCT Japan</h3>
+          <p class="when">2026.05</p>
+        </article>
+      </div>
+    </section>
 
-  <h3 class="employer">MCT Japan<span>2026.05 – 現在</span></h3>
+    <section class="year" aria-label="2025 年">
+      <p class="yr">2025</p>
+      <div>
+        <article class="ev">
+          <h3>船舶管理系統重建</h3>
+          <p class="when">2025.09 – 2026.04｜スリーティソフト｜團隊 15 人｜負責工程：詳細設計～整合測試</p>
+          <p class="summary">將既有的 C# 系統以 Java・React 重新開發。</p>
+          <ul>
+            <li>後端／前端開發與單元測試</li>
+            <li>新開發各類申請共用的郵件寄送功能</li>
+            <li>弱點掃描與檢出問題的修正</li>
+            <li>日籍設計者與中國籍開發者之間的會議口譯與協調</li>
+            <li>每日例行發布的備份作業</li>
+          </ul>
+          <div class="tags"><span>Java</span><span>Spring</span><span>React</span><span>Oracle</span></div>
+        </article>
+        <article class="ev ev-short">
+          <h3>取得基本資訊技術者證照</h3>
+          <p class="when">2025</p>
+        </article>
+      </div>
+    </section>
 
-  <div class="job">
-    <div class="period">2026.10 – 現在</div>
-    <div>
-      <h3>AI 業務助理（企業示範）</h3>
-      <p class="summary">為多家日本製造業、汽車業客戶製作的 AI 業務助理示範，涵蓋接單、規格書管理等流程。</p>
-      <ul>
-        <li>依各客戶的業務流程設計並調整畫面</li>
-        <li>以共通的基礎版本快速衍生出各客戶專用的示範</li>
-        <li>部署至 Azure 供客戶實際操作</li>
-      </ul>
-      <div class="tags"><span>Web</span><span>Azure</span><span>AI</span></div>
-    </div>
+    <section class="year" aria-label="2024 年">
+      <p class="yr">2024</p>
+      <div>
+        <article class="ev">
+          <h3>系統基礎架構更新</h3>
+          <p class="when">2024.12 – 2025.08｜スリーティソフト｜團隊 15 人｜負責工程：基本設計～單元測試</p>
+          <p class="summary">因授權到期進行的基礎架構更新與系統架構調整。</p>
+          <ul>
+            <li>調查 WebLogic・Java 升級造成的不相容問題並撰寫報告</li>
+            <li>考量成本的伺服器規格設計</li>
+            <li>建置 WebLogic 與網域，並進行建置後測試</li>
+            <li>於每週例會報告進度與共享課題</li>
+          </ul>
+          <div class="tags"><span>Java</span><span>WebLogic</span><span>Oracle</span><span>Linux</span></div>
+        </article>
+        <article class="ev">
+          <h3>公務員資訊管理系統維護</h3>
+          <p class="when">2024.08 – 2024.11｜スリーティソフト｜團隊 15 人｜負責工程：開發～單元測試、維運</p>
+          <p class="summary">資訊管理系統的維護與基礎架構升級。</p>
+          <ul>
+            <li>瀏覽器／OS 升級相關測試與測試報告</li>
+            <li>依客戶需求開發 Shell 腳本、修改程式</li>
+            <li>處理客戶緊急需求與日常維護</li>
+            <li>撰寫每日／每週系統使用狀況報告</li>
+          </ul>
+          <div class="tags"><span>Java</span><span>TERASOLUNA</span><span>JSP</span><span>Hibernate</span><span>PostgreSQL</span><span>Shell</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="year" aria-label="2023 年">
+      <p class="yr">2023</p>
+      <div>
+        <article class="ev ev-short">
+          <h3>通過日本語能力試驗 JLPT N1</h3>
+          <p class="when">2023</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="year" aria-label="2022 年">
+      <p class="yr">2022</p>
+      <div>
+        <article class="ev">
+          <h3>網路管理系統新版本開發</h3>
+          <p class="when">2022.12 – 2024.07｜スリーティソフト｜團隊 15 人｜負責工程：詳細設計～整合測試</p>
+          <p class="summary">既有系統的新版本開發。</p>
+          <ul>
+            <li>詳細設計與詳細設計書撰寫</li>
+            <li>新增畫面、API、批次程式</li>
+            <li>系統測試與測試報告撰寫</li>
+            <li>處理客戶的調查需求</li>
+          </ul>
+          <div class="tags"><span>Java</span><span>Spring</span><span>JSF</span><span>Hibernate</span><span>PostgreSQL</span></div>
+        </article>
+        <article class="ev ev-short">
+          <h3>來到日本，加入スリーティソフト</h3>
+          <p class="when">2022.12</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="year" aria-label="2021 年">
+      <p class="yr">2021</p>
+      <div>
+        <article class="ev">
+          <h3>玉山銀行 資訊處｜軟體工程師</h3>
+          <p class="when">2021.01 – 2021.06｜團隊 30 人｜負責工程：詳細設計～單元測試</p>
+          <p class="summary">隸屬海外資訊部，負責解決海外分行的業務需求。完成新人訓練後，主要負責香港分行開戶系統上線，以及開戶、存款、匯款功能的維護與追加開發。</p>
+          <ul>
+            <li>香港分行開戶系統上線</li>
+            <li>程式開發、批次與報表開發，以及追加開發相關測試</li>
+            <li>驗收外包廠商的工作成果、確認作業進度</li>
+            <li>每日新版程式部署</li>
+          </ul>
+          <div class="tags"><span>Java</span><span>Hibernate</span><span>SQL Server</span><span>Oracle</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="year" aria-label="2020 年">
+      <p class="yr">2020</p>
+      <div>
+        <article class="ev ev-short">
+          <h3>國立中央大學 資訊工程學系 畢業</h3>
+          <p class="when">2020.06</p>
+        </article>
+        <article class="ev ev-short">
+          <h3>TOEIC 825 分</h3>
+          <p class="when">2020.04</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="year" aria-label="2019 年">
+      <p class="yr">2019</p>
+      <div>
+        <article class="ev">
+          <h3>設計思考通識課程｜助教</h3>
+          <p class="when">2019.09 – 2020.01</p>
+          <p class="summary">課程目標是讓學生組成團隊做出一套桌遊。擔任助教期間負責引導學生的討論方向並適時提出建議，最後 8 組學生團隊都成功做出桌遊。</p>
+        </article>
+        <article class="ev">
+          <h3>均一教育平台｜軟體 QA 實習生</h3>
+          <p class="when">2019.06 – 2020.01</p>
+          <p class="summary">以網頁除錯（Debug）為主，因此對網頁架構有一定程度的了解。也參與大量團隊協作，學到業界的溝通方式、開發流程，以及對工程師能力的要求。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="year" aria-label="2018 年">
+      <p class="yr">2018</p>
+      <div>
+        <article class="ev ev-short">
+          <h3>梅竹黑客松 2018｜最佳創意獎</h3>
+          <p class="when">2018</p>
+        </article>
+        <article class="ev ev-short">
+          <h3>程式競賽：ICPC 2018 台灣站、TOPC 2018、ITSA 2018、NCPC 2018</h3>
+          <p class="when">2018</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="year" aria-label="大學期間">
+      <p class="yr yr-text">大學</p>
+      <div>
+        <article class="ev ev-short">
+          <h3>CPE 大學程式能力檢定｜2214 人中第 18 名</h3>
+          <p class="when">國立中央大學在學期間</p>
+        </article>
+      </div>
+    </section>
+
   </div>
-
-  <div class="job">
-    <div class="period">2026.05 – 現在</div>
-    <div>
-      <h3>就農補助資金管理系統開發</h3>
-      <p class="summary">集中管理農業法人與就農者從登錄、申請、審查到補助款請領的 Web 系統。</p>
-      <p class="meta">負責工程：基本設計～整合測試</p>
-      <ul>
-        <li>畫面、API、資料庫設計與設計文件撰寫</li>
-        <li>以 Next.js／React 開發畫面與輸入檢核</li>
-        <li>以 FastAPI 開發 API 與業務邏輯</li>
-        <li>申請、審查、退回／重新提交流程與角色權限控制</li>
-        <li>PDF 報表輸出、附件管理、郵件通知功能</li>
-        <li>PostgreSQL 資料表設計，以 Alembic 管理資料庫變更</li>
-        <li>測試、修正錯誤，以 Docker 建置環境與部署</li>
-        <li>運用 Claude Code／Codex 進行 AI 輔助開發</li>
-      </ul>
-      <div class="tags"><span>Python</span><span>FastAPI</span><span>SQLAlchemy</span><span>TypeScript</span><span>Next.js</span><span>React</span><span>PostgreSQL</span><span>Alembic</span><span>Docker</span><span>pytest</span></div>
-    </div>
-  </div>
-
-  <div class="job">
-    <div class="period">2026.05 – 2026.08</div>
-    <div>
-      <h3>簽核系統 MCP 伺服器與 API 開發</h3>
-      <p class="summary">讓 AI 助理（Claude 等）能透過 MCP 查詢、起草、送出與審核日本企業簽核 SaaS 上的申請。在既有的 VB.NET WebForms 系統之外另建 ASP.NET Core API，再由 Python MCP 伺服器呼叫。</p>
-      <ul>
-        <li>開發 SSO 登入，並處理 SSO 成功但簽核系統登入失敗等例外情況</li>
-        <li>開發申請附件的上傳、下載、刪除功能，加上權限與副檔名限制</li>
-        <li>MCP 伺服器的登入畫面、上傳畫面改善與流程修正</li>
-        <li>Azure 部署相關調整</li>
-      </ul>
-      <div class="tags"><span>Python</span><span>FastAPI</span><span>MCP</span><span>ASP.NET Core</span><span>C#</span><span>VB.NET</span><span>Azure</span></div>
-    </div>
-  </div>
-
-  <h3 class="employer">スリーティソフト<span>2022.12 – 2026.04</span></h3>
-
-  <div class="job">
-    <div class="period">2025.09 – 2026.04</div>
-    <div>
-      <h3>船舶管理系統重建</h3>
-      <p class="summary">將既有的 C# 系統以 Java・React 重新開發。</p>
-      <p class="meta">團隊 15 人｜負責工程：詳細設計～整合測試</p>
-      <ul>
-        <li>後端／前端開發與單元測試</li>
-        <li>新開發各類申請共用的郵件寄送功能</li>
-        <li>弱點掃描與檢出問題的修正</li>
-        <li>日籍設計者與中國籍開發者之間的會議口譯與協調</li>
-        <li>每日例行發布的備份作業</li>
-      </ul>
-      <div class="tags"><span>Java</span><span>Spring</span><span>React</span><span>Oracle</span></div>
-    </div>
-  </div>
-
-  <div class="job">
-    <div class="period">2024.12 – 2025.08</div>
-    <div>
-      <h3>系統基礎架構更新</h3>
-      <p class="summary">因授權到期進行的基礎架構更新與系統架構調整。</p>
-      <p class="meta">團隊 15 人｜負責工程：基本設計～單元測試</p>
-      <ul>
-        <li>調查 WebLogic・Java 升級造成的不相容問題並撰寫報告</li>
-        <li>考量成本的伺服器規格設計</li>
-        <li>建置 WebLogic 與網域，並進行建置後測試</li>
-        <li>於每週例會報告進度與共享課題</li>
-      </ul>
-      <div class="tags"><span>Java</span><span>WebLogic</span><span>Oracle</span><span>Linux</span></div>
-    </div>
-  </div>
-
-  <div class="job">
-    <div class="period">2024.08 – 2024.11</div>
-    <div>
-      <h3>公務員資訊管理系統維護</h3>
-      <p class="summary">資訊管理系統的維護與基礎架構升級。</p>
-      <p class="meta">團隊 15 人｜負責工程：開發～單元測試、維運</p>
-      <ul>
-        <li>瀏覽器／OS 升級相關測試與測試報告</li>
-        <li>依客戶需求開發 Shell 腳本、修改程式</li>
-        <li>處理客戶緊急需求與日常維護</li>
-        <li>撰寫每日／每週系統使用狀況報告</li>
-      </ul>
-      <div class="tags"><span>Java</span><span>TERASOLUNA</span><span>JSP</span><span>Hibernate</span><span>PostgreSQL</span><span>Shell</span></div>
-    </div>
-  </div>
-
-  <div class="job">
-    <div class="period">2022.12 – 2024.07</div>
-    <div>
-      <h3>網路管理系統新版本開發</h3>
-      <p class="summary">既有系統的新版本開發。</p>
-      <p class="meta">團隊 15 人｜負責工程：詳細設計～整合測試</p>
-      <ul>
-        <li>詳細設計與詳細設計書撰寫</li>
-        <li>新增畫面、API、批次程式</li>
-        <li>系統測試與測試報告撰寫</li>
-        <li>處理客戶的調查需求</li>
-      </ul>
-      <div class="tags"><span>Java</span><span>Spring</span><span>JSF</span><span>Hibernate</span><span>PostgreSQL</span></div>
-    </div>
-  </div>
-
-  <h3 class="employer">玉山銀行 資訊處<span>2021.01 – 2021.06</span></h3>
-
-  <div class="job">
-    <div class="period">2021.01 – 2021.06</div>
-    <div>
-      <h3>軟體工程師</h3>
-      <p class="summary">隸屬海外資訊部，負責解決海外分行的業務需求。完成新人訓練後，主要負責香港分行開戶系統上線，以及開戶、存款、匯款功能的維護與追加開發。</p>
-      <p class="meta">團隊 30 人｜負責工程：詳細設計～單元測試</p>
-      <ul>
-        <li>香港分行開戶系統上線</li>
-        <li>程式開發、批次與報表開發，以及追加開發相關測試</li>
-        <li>驗收外包廠商的工作成果、確認作業進度</li>
-        <li>每日新版程式部署</li>
-      </ul>
-      <div class="tags"><span>Java</span><span>Hibernate</span><span>SQL Server</span><span>Oracle</span></div>
-    </div>
-  </div>
-
-  <h3 class="employer">均一教育平台<span>2019.06 – 2020.01</span></h3>
-
-  <div class="job">
-    <div class="period">2019.06 – 2020.01</div>
-    <div>
-      <h3>軟體 QA 實習生</h3>
-      <p class="summary">以網頁除錯（Debug）為主，因此對網頁架構有一定程度的了解。也參與大量團隊協作，學到業界的溝通方式、開發流程，以及對工程師能力的要求。</p>
-    </div>
-  </div>
-
-  <h2>其他經歷</h2>
-  <div class="job">
-    <div class="period">2019.09 – 2020.01</div>
-    <div>
-      <h3>設計思考通識課程｜助教</h3>
-      <p class="summary">課程目標是讓學生組成團隊做出一套桌遊。擔任助教期間負責引導學生的討論方向並適時提出建議，最後 8 組學生團隊都成功做出桌遊。</p>
-    </div>
-  </div>
-
-  <h2>競賽經歷</h2>
-  <dl class="facts">
-    <dt>CPE 大學程式能力檢定</dt><dd>2214 人中第 18 名</dd>
-    <dt>梅竹黑客松 2018</dt><dd>最佳創意獎</dd>
-    <dt>ICPC 2018 台灣站</dt><dd>參賽</dd>
-    <dt>TOPC 2018</dt><dd>參賽</dd>
-    <dt>ITSA 2018</dt><dd>參賽</dd>
-    <dt>NCPC 2018</dt><dd>參賽</dd>
-  </dl>
 
   <h2>技能</h2>
   <h4>實務經驗 1 年以上</h4>
