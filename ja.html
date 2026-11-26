@@ -258,6 +258,13 @@
   <h2>個人・共同開発プロジェクト</h2>
   <div class="grid">
     <div class="card">
+      <img src="img/sudoku-battle.png" alt="数独対戦のトップ画面" width="640" height="400" loading="lazy">
+      <h3>数独対戦（共同開発）</h3>
+      <p>Web の数独。一人用練習（5 段階の難易度、振り返り分析）、CPU 対戦、最大 8 人のオンライン対戦に対応し、Cloudflare Workers 上で動作（ルームごとに Durable Object）。担当：アカウントとログイン（メール＋パスワード、Google・GitHub・Discord などの OAuth、記録をアカウントに保存）、トップページと URL ルーティング、対戦ルーム一覧、ルームのパスワード、準備・キック・自動開始、ルーム内の CPU プレイヤー、サーバー基準のタイマーと不正判定の修正、解答・対戦の記録ページ。画面は中国語です。</p>
+      <div class="tags"><span>JavaScript</span><span>Cloudflare Workers</span><span>Durable Objects</span><span>WebSocket</span><span>OAuth</span></div>
+      <a href="https://sudoku-online.sudokubattle.workers.dev">プレイする</a>
+    </div>
+    <div class="card">
       <img src="img/formosa-rail.png" alt="寶島鐵道大亨のスタート画面" width="780" height="488" loading="lazy">
       <h3>寶島鐵道大亨（台湾鉄道すごろく）</h3>
       <p>台湾の鉄道を舞台にしたオリジナルのすごろく型ボードゲーム（Web）。サイコロで鉄道を一周しながら各駅の名産物件を買い、年末の決算で収益を得て、最終的に総資産が最も多い人が勝ち。1～4 人で同じ端末で遊ぶか CPU と対戦でき、4 桁のルームコードでオンライン対戦も可能（WebRTC の P2P でサーバー不要、切断時は CPU が代打）。飛行機・フェリー、6 つの離島マップ、買収カードなどのルールも実装。ビルド不要の純粋な HTML／CSS／JavaScript。ゲーム内の言語は中国語です。</p>

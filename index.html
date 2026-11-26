@@ -258,6 +258,13 @@
   <h2>個人與共同開發專案</h2>
   <div class="grid">
     <div class="card">
+      <img src="img/sudoku-battle.png" alt="數獨對戰的首頁" width="640" height="400" loading="lazy">
+      <h3>數獨對戰（共同開發）</h3>
+      <p>網頁數獨：單人練習（五種難度、覆盤分析）、跟電腦對戰、最多 8 人線上對戰，跑在 Cloudflare Workers，每個房間是一個 Durable Object。我負責：帳號與登入（信箱密碼，以及 Google、GitHub、Discord 等 OAuth，紀錄存在帳號上）、首頁與網址路由、對戰房間列表、房間密碼、準備／踢人／自動開始、房間裡的電腦玩家、以伺服器為準的計時與作弊判定修正，以及解題與對戰紀錄頁。</p>
+      <div class="tags"><span>JavaScript</span><span>Cloudflare Workers</span><span>Durable Objects</span><span>WebSocket</span><span>OAuth</span></div>
+      <a href="https://sudoku-online.sudokubattle.workers.dev">線上遊玩</a>
+    </div>
+    <div class="card">
       <img src="img/formosa-rail.png" alt="寶島鐵道大亨的開始畫面" width="780" height="488" loading="lazy">
       <h3>寶島鐵道大亨</h3>
       <p>以台灣鐵路為舞台的原創大富翁類網頁遊戲：擲骰沿鐵路環島、買下各站的在地物件，年底決算收益，最後總資產最多的人獲勝。支援 1～4 人同機遊玩或與電腦對戰，也能用 4 碼房間代碼線上對戰（WebRTC 點對點，不需要自己的伺服器，斷線時由電腦代打）。還有飛機、渡輪、六座離島地圖與收購卡等規則。不需建置，純 HTML／CSS／JavaScript。</p>

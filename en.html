@@ -258,6 +258,13 @@
   <h2>Personal and collaborative projects</h2>
   <div class="grid">
     <div class="card">
+      <img src="img/sudoku-battle.png" alt="The Sudoku Battle home screen" width="640" height="400" loading="lazy">
+      <h3>Sudoku Battle (collaboration)</h3>
+      <p>Browser sudoku with solo practice (five difficulty levels and a post-game review), games against the computer, and online matches for up to eight players, running on Cloudflare Workers with one Durable Object per room. My part: accounts and sign-in (email and password, plus OAuth with Google, GitHub, Discord and others, with records saved to the account), the home page and URL routing, the room list, room passwords, ready/kick/auto-start, computer players inside rooms, server-side timing and fixes to cheat detection, and the history page for solved puzzles and matches. The interface is in Chinese.</p>
+      <div class="tags"><span>JavaScript</span><span>Cloudflare Workers</span><span>Durable Objects</span><span>WebSocket</span><span>OAuth</span></div>
+      <a href="https://sudoku-online.sudokubattle.workers.dev">Play it</a>
+    </div>
+    <div class="card">
       <img src="img/formosa-rail.png" alt="The start screen of Formosa Rail Tycoon" width="780" height="488" loading="lazy">
       <h3>Formosa Rail Tycoon (寶島鐵道大亨)</h3>
       <p>An original board game for the browser, set on Taiwan's railways: roll dice to travel around the island, buy local properties at each station, collect earnings at the year-end settlement, and finish with the most assets to win. One to four players can share a device or play against the computer, and friends can join online with a four-digit room code (peer-to-peer over WebRTC, no server of my own; the computer takes over for disconnected players). Flights, ferries, six outlying-island maps and takeover cards are included. Plain HTML, CSS and JavaScript with no build step. The game is in Chinese.</p>
